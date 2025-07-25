@@ -1,0 +1,141 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Replay Email",
+    "aliasName": null,
+    "tag": null,
+    "description": null,
+    "isActive": false,
+    "debug": true,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/4dc865c8-012e-4326-8be5-252b723ea734",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/0c42d366-1fc1-43c7-8cc2-9b8780e23b00",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Get Email",
+            "description": null,
+            "arguments": {
+                "name": "Exchange",
+                "config": "47f0eba4-eb07-475f-87ec-839f1d23a94f",
+                "params": {
+                    "limit": "",
+                    "source": "Inbox",
+                    "mark_read": true,
+                    "pull_oldest": false,
+                    "parse_inline": "",
+                    "save_as_attachment": false,
+                    "extract_attach_data": true,
+                    "exclude_absolute_path": false
+                },
+                "version": "4.5.1",
+                "connector": "exchange",
+                "operation": "get_email_new",
+                "operationTitle": "Get Unread Emails",
+                "pickFromTenant": false,
+                "step_variables": []
+            },
+            "status": null,
+            "top": "238",
+            "left": "840",
+            "stepType": "\/api\/3\/workflow_step_types\/0bfed618-0316-11e7-93ae-92361f002671",
+            "group": null,
+            "uuid": "6806a526-42ec-4f84-8ee4-e48543d737a3"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Replay Email",
+            "description": null,
+            "arguments": {
+                "name": "Exchange",
+                "config": "47f0eba4-eb07-475f-87ec-839f1d23a94f",
+                "params": {
+                    "body": "<p>Test Reply<\/p>",
+                    "subject": "",
+                    "reply_all": false,
+                    "message_id": "<PN0PR01MB9181986B4A225E3BC545266087C32@PN0PR01MB9181.INDPRD01.PROD.OUTLOOK.COM>",
+                    "to_recipients": ""
+                },
+                "version": "4.5.1",
+                "connector": "exchange",
+                "operation": "send_reply",
+                "operationTitle": "Send Reply",
+                "pickFromTenant": false,
+                "step_variables": []
+            },
+            "status": null,
+            "top": "100",
+            "left": "880",
+            "stepType": "\/api\/3\/workflow_step_types\/0bfed618-0316-11e7-93ae-92361f002671",
+            "group": null,
+            "uuid": "04b7fbe4-a243-4bbe-9d64-af74370c0dd6"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "route": "0fc84480-49fd-4124-a36b-e23693d91bd8",
+                "resources": [
+                    "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                    "input": {
+                        "params": [],
+                        "records": "{{vars.input.records}}"
+                    }
+                },
+                "triggerOnSource": true,
+                "displayConditions": {
+                    "alerts": {
+                        "sort": [],
+                        "limit": 30,
+                        "logic": "AND",
+                        "filters": []
+                    }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                    "visible": false,
+                    "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+            },
+            "status": null,
+            "top": "40",
+            "left": "40",
+            "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+            "group": null,
+            "uuid": "0c42d366-1fc1-43c7-8cc2-9b8780e23b00"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Replay Email",
+            "targetStep": "\/api\/3\/workflow_steps\/04b7fbe4-a243-4bbe-9d64-af74370c0dd6",
+            "sourceStep": "\/api\/3\/workflow_steps\/0c42d366-1fc1-43c7-8cc2-9b8780e23b00",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "2394f546-33db-4c2f-89ee-042d33372298"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "playbookOrigin": "\/api\/3\/picklists\/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+    "isEditable": true,
+    "uuid": "8c8711e1-3134-44f0-8a19-1b4216a1a62a",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": []
+}

@@ -1,0 +1,27 @@
+{
+    "COMMUNICATION": {
+        "MODULE_DETAILS": {
+            "SINGULAR_NAME": "Communication",
+            "PLURAL_NAME": "Communications"
+        },
+        "FIELDS": {
+            "EMAILREFID": "Email Reference ID",
+            "REPLYEMAILREFID": "Reply Email Reference ID",
+            "BODY": "Body",
+            "MSGDIRECTION": "State",
+            "TYPE": "Type",
+            "HEADER": "Header",
+            "COMMENTS": "Comments",
+            "COMMUNICATIONS": "Communications",
+            "FILE": "File",
+            "TO": "To",
+            "WARROOMS": "War Room",
+            "FROM": "From",
+            "ALERTS": "Alerts",
+            "INCIDENTS": "Incidents",
+            "BCC": "Bcc",
+            "CC": "CC",
+            "SUBJECT": "Subject"
+        }
+    }
+}

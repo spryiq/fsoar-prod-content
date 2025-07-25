@@ -1,0 +1,62 @@
+[
+    {
+        "name": "PB_Log_TTL",
+        "value": "30",
+        "default_value": null
+    },
+    {
+        "name": "Default_Indicator_TTL_Days",
+        "value": "20",
+        "default_value": "20"
+    },
+    {
+        "name": "Excludelist_IPs",
+        "value": "8.8.8.8,10.1.1.2",
+        "default_value": "8.8.8.8,10.1.1.2"
+    },
+    {
+        "name": "Excludelist_URLs",
+        "value": "https://www.google.com,https://mail.yahoo.com/login.html,https://www.office.com/,https://www.fortielab.com/patches/09870987.php,http://www.w3.org/1999/xhtml",
+        "default_value": "https://www.google.com,https://mail.yahoo.com/login.html,https://www.office.com/"
+    },
+    {
+        "name": "Excludelist_Domains",
+        "value": "google.com,yahoo.com,fortinet.net,cybersponse.com,gmail.com,outlook.com,microsoft.com,fortinet.com,twitter.com,facebook.com,linkedin.com,instagram.com,fortiguard.com,forticloud.com,w3.org,tec.gov.ae,fortielab.com",
+        "default_value": "google.com,yahoo.com,fortinet.net,cybersponse.com,gmail.com,outlook.com,microsoft.com,fortinet.com,twitter.com,facebook.com,linkedin.com,instagram.com,fortiguard.com,forticloud.com,w3.org,tec.gov.ae"
+    },
+    {
+        "name": "Domain_Enrichment_Playbooks_IRIs",
+        "value": "/api/3/workflows/b1a57e00-ce21-42e4-9ca3-e60a34237974,/api/3/workflows/574bbeac-9e97-4ee4-a2da-af590980eab8",
+        "default_value": "/api/3/workflows/b1a57e00-ce21-42e4-9ca3-e60a34237974,/api/3/workflows/574bbeac-9e97-4ee4-a2da-af590980eab8"
+    },
+    {
+        "name": "Email_Enrichment_Playbooks_IRIs",
+        "value": "NoEnrichmentAvailable",
+        "default_value": "NoEnrichmentAvailable"
+    },
+    {
+        "name": "File_Enrichment_Playbooks_IRIs",
+        "value": "/api/3/workflows/d8c94a92-e232-4bfc-8177-33cfd9b0295e",
+        "default_value": "/api/3/workflows/d8c94a92-e232-4bfc-8177-33cfd9b0295e"
+    },
+    {
+        "name": "FileHash_Enrichment_Playbooks_IRIs",
+        "value": "/api/3/workflows/b1a57e00-ce21-42e4-9ca3-e60a34237974,/api/3/workflows/b36b92bc-6b19-4a1f-b771-3a58c5f6b425",
+        "default_value": "/api/3/workflows/b1a57e00-ce21-42e4-9ca3-e60a34237974,/api/3/workflows/b36b92bc-6b19-4a1f-b771-3a58c5f6b425"
+    },
+    {
+        "name": "IP_Enrichment_Playbooks_IRIs",
+        "value": "/api/3/workflows/b1a57e00-ce21-42e4-9ca3-e60a34237974,/api/3/workflows/1d15a36a-44db-4a80-89f1-5f0eb3ce41d4,/api/3/workflows/1205c099-6d13-43d9-9c46-0e0e90f99e1f",
+        "default_value": "/api/3/workflows/b1a57e00-ce21-42e4-9ca3-e60a34237974,/api/3/workflows/1d15a36a-44db-4a80-89f1-5f0eb3ce41d4,/api/3/workflows/1205c099-6d13-43d9-9c46-0e0e90f99e1f"
+    },
+    {
+        "name": "URL_Enrichment_Playbooks_IRIs",
+        "value": "/api/3/workflows/93695b4e-79db-4eff-b1ed-29293ca535b4,/api/3/workflows/b1a57e00-ce21-42e4-9ca3-e60a34237974",
+        "default_value": "/api/3/workflows/93695b4e-79db-4eff-b1ed-29293ca535b4,/api/3/workflows/b1a57e00-ce21-42e4-9ca3-e60a34237974"
+    },
+    {
+        "name": "User_Enrichment_Playbooks_IRIs",
+        "value": "NoEnrichmentAvailable",
+        "default_value": "NoEnrichmentAvailable"
+    }
+]

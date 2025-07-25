@@ -1,0 +1,45 @@
+{
+    "INDICATORS": {
+        "MODULE_DETAILS": {
+            "SINGULAR_NAME": "Indicator",
+            "PLURAL_NAME": "Indicators"
+        },
+        "FIELDS": {
+            "ATTACHMENTS": "Attachments",
+            "UUID": "UUID",
+            "DESCRIPTION": "Description",
+            "SOURCEDATA": "Source Data",
+            "COMPANIES": "Companies",
+            "INCIDENTS": "Incidents",
+            "PERSONS": "People",
+            "LASTSEEN": "Last Seen",
+            "FIRSTSEEN": "First Seen",
+            "EVENTS": "Events",
+            "ALERTS": "Alerts",
+            "ASSETS": "Assets",
+            "ENRICHMENTSTATUS": "Enrichment Status",
+            "WARROOMS": "War Rooms",
+            "CAMPAIGNS": "Campaigns",
+            "EXPIRYDATE": "Expires On",
+            "EXPIREDSTATUS": "Expired",
+            "TLP": "TLP",
+            "SOURCEID": "Source ID",
+            "CONFIDENCE": "Confidence",
+            "INDICATORSTATUS": "Status",
+            "TYPEOFINDICATOR": "Type",
+            "VALUE": "Value",
+            "FILE": "File",
+            "SOURCES": "Sources",
+            "COMMENTS": "Comments",
+            "INDICATORS": "Indicators",
+            "FILEHASHMD5": "FileHash MD5",
+            "FILEHASHSHA1": "FileHash SHA1",
+            "FILEHASHSHA256": "FileHash SHA256",
+            "COUNTRY": "Country",
+            "TASKS": "Tasks",
+            "REPUTATION": "Reputation",
+            "THREATINTELFEEDS": "Threat Intel Feed",
+            "WORKSPACES": "Workspaces"
+        }
+    }
+}

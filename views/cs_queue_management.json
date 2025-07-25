@@ -1,0 +1,116 @@
+{
+    "@context": "\/api\/3\/contexts\/SystemViewTemplate",
+    "@type": "SystemViewTemplate",
+    "type": "rows",
+    "config": [
+        {
+            "type": "fsQueueSettings",
+            "clearRules": {
+                "alerts": {
+                    "condition": {
+                        "sort": [],
+                        "limit": 10,
+                        "logic": "AND",
+                        "filters": [
+                            {
+                                "field": "status",
+                                "operator": "eq",
+                                "value": "\/api\/3\/picklists\/fac53e73-8d16-4189-98d5-95fbd1555232",
+                                "_value": {
+                                    "itemValue": "Closed",
+                                    "@id": "\/api\/3\/picklists\/fac53e73-8d16-4189-98d5-95fbd1555232"
+                                },
+                                "type": "object"
+                            }
+                        ]
+                    },
+                    "isActive": true,
+                    "isChangedFields": [
+                        "status"
+                    ]
+                },
+                "incidents": {
+                    "condition": {
+                        "sort": [],
+                        "limit": 10,
+                        "logic": "AND",
+                        "filters": [
+                            {
+                                "field": "status",
+                                "operator": "eq",
+                                "value": "\/api\/3\/picklists\/bb73fd5e-f699-11e7-8c3f-9a214cf093ae",
+                                "_value": {
+                                    "itemValue": "Resolved",
+                                    "@id": "\/api\/3\/picklists\/bb73fd5e-f699-11e7-8c3f-9a214cf093ae"
+                                },
+                                "type": "object"
+                            }
+                        ]
+                    },
+                    "isActive": true,
+                    "isChangedFields": [
+                        "status"
+                    ]
+                },
+                "tasks": {
+                    "condition": {
+                        "sort": [],
+                        "limit": 10,
+                        "logic": "AND",
+                        "filters": [
+                            {
+                                "field": "status",
+                                "operator": "eq",
+                                "value": "\/api\/3\/picklists\/343f4b67-e929-4205-bf95-ba5b70545fed",
+                                "_value": {
+                                    "itemValue": "Completed",
+                                    "@id": "\/api\/3\/picklists\/343f4b67-e929-4205-bf95-ba5b70545fed"
+                                },
+                                "type": "object"
+                            }
+                        ]
+                    },
+                    "isActive": true,
+                    "isChangedFields": [
+                        "status"
+                    ]
+                }
+            },
+            "gridConfigs": {
+                "alerts": {
+                    "columns": [
+                        "id",
+                        "name",
+                        "status",
+                        "assignedTo",
+                        "createDate"
+                    ]
+                },
+                "incidents": {
+                    "columns": [
+                        "id",
+                        "name",
+                        "status",
+                        "incidentLead",
+                        "createDate"
+                    ]
+                },
+                "tasks": {
+                    "columns": [
+                        "id",
+                        "name",
+                        "status",
+                        "assignedToPerson",
+                        "createDate"
+                    ]
+                }
+            },
+            "assigneeFields": {
+                "alerts": "assignedTo",
+                "incidents": "incidentLead",
+                "tasks": "assignedToPerson"
+            }
+        }
+    ],
+    "uuid": "cs_queue_management"
+}

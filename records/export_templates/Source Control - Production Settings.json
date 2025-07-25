@@ -1,0 +1,84 @@
+[
+    {
+        "@type": "ExportTemplate",
+        "name": "Source Control - Production Settings",
+        "options": {
+            "roles": [],
+            "rules": [],
+            "teams": [],
+            "views": [
+                {
+                    "value": "app",
+                    "appendNavigation": [
+                        "Dashboard",
+                        "Queue & Shift Management",
+                        "Incident Response",
+                        "Automation",
+                        "Resources",
+                        "Reports",
+                        "Widget Library",
+                        "Content Hub",
+                        "Help",
+                        "User Community"
+                    ]
+                },
+                {
+                    "value": "cs_queue_management"
+                }
+            ],
+            "actors": [],
+            "modules": [],
+            "reports": [],
+            "widgets": [],
+            "connectors": [],
+            "dashboards": [],
+            "recordSets": [
+                {
+                    "name": "Export Templates",
+                    "type": "export_templates",
+                    "query": {
+                        "sort": [],
+                        "limit": 1,
+                        "logic": "AND",
+                        "filters": [
+                            {
+                                "type": "primitive",
+                                "field": "name",
+                                "value": "Source Control - Production Settings",
+                                "operator": "eq",
+                                "_operator": "eq"
+                            }
+                        ],
+                        "__selectFields": [
+                            "uuid"
+                        ]
+                    },
+                    "include": true,
+                    "whenExists": "replace",
+                    "moduleNotExists": true,
+                    "includeCorrelations": false
+                }
+            ],
+            "appSettings": [
+                "systemSettings",
+                "LDAP",
+                "RADIUS",
+                "TOKEN",
+                "HA",
+                "sso",
+                "syslog",
+                "proxy"
+            ],
+            "ruleChannels": [],
+            "picklistNames": [],
+            "viewTemplates": [],
+            "playbookBlocks": [],
+            "globalVariables": [],
+            "playbookCollections": []
+        },
+        "type": "Export Wizard",
+        "solutionPack": null,
+        "metadata": [],
+        "uuid": "2d471ee6-abe4-4ff3-81f9-5f1f6e158eb6"
+    }
+]

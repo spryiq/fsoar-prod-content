@@ -1,0 +1,33 @@
+{
+    "WARROOMS": {
+        "MODULE_DETAILS": {
+            "SINGULAR_NAME": "War Room",
+            "PLURAL_NAME": "War Rooms"
+        },
+        "FIELDS": {
+            "CLOSEDON": "Closed On",
+            "STATUS": "Status",
+            "CURRENTSTATUS": "Current Status",
+            "TITLE": "Title",
+            "SUBTITLE": "Subtitle",
+            "SUMMARY": "Summary",
+            "NEXTSTEPS": "Next Steps",
+            "ACTIVESINCE": "Active Since",
+            "CONFERENCEBRIDGE": "Conference Bridge",
+            "CONFERENCEBRIDGEINTEGRATION": "Conference Bridge Integration",
+            "COLLABORATION": "Collaboration",
+            "COLLABORATIONINTEGRATION": "Collaboration Integration",
+            "REPORT": "Report",
+            "TASKS": "Tasks",
+            "COMMENTS": "Comments",
+            "INCIDENTS": "Incidents",
+            "ALERTS": "Alerts",
+            "ASSETS": "Assets",
+            "INDICATORS": "Indicators",
+            "LAUNCHEDBY": "Launched By",
+            "ATTACHMENTS": "Attachments",
+            "ANNOUNCEMENTS": "Announcements",
+            "COMMUNICATION": "Communications"
+        }
+    }
+}

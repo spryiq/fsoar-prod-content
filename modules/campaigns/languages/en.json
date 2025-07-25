@@ -1,0 +1,25 @@
+{
+    "CAMPAIGNS": {
+        "MODULE_DETAILS": {
+            "SINGULAR_NAME": "Campaign",
+            "PLURAL_NAME": "Campaigns"
+        },
+        "FIELDS": {
+            "DESCRIPTION": "Description",
+            "INCIDENTS": "Incidents",
+            "INDICATORS": "Indicators",
+            "MALWAREEMPLOYED": "Malware Employed",
+            "LASTSEEN": "Last Seen",
+            "INTENDEDEFFECT": "Intended Effect",
+            "ALERTS": "Alerts",
+            "ATTACKVECTOR": "Attack Vector",
+            "NAME": "Campaign Name",
+            "CAMPAIGNSTART": "Campaign Start",
+            "COMMENTS": "Comments",
+            "STATUS": "Status",
+            "PHISHINGLURE": "Phishing Lure",
+            "TARGETEDCVES": "Targeted CVEs",
+            "THREATACTOR": "Threat Actor"
+        }
+    }
+}

@@ -1,0 +1,106 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Get Ticket",
+    "aliasName": null,
+    "tag": null,
+    "description": null,
+    "isActive": true,
+    "debug": true,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/4dc865c8-012e-4326-8be5-252b723ea734",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/d1cea3ae-6be0-4369-adb8-def01c69bc17",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Get Ticket data",
+            "description": null,
+            "arguments": {
+                "name": "ManageEngine ServiceDesk Plus",
+                "config": "e80f16b0-3dc0-45df-a021-81e2fa8b086b",
+                "params": {
+                    "request_id": "125291"
+                },
+                "version": "4.0.0",
+                "connector": "manage-engine-service-desk-plus_dev",
+                "operation": "get_request",
+                "operationTitle": "Get Ticket Details",
+                "pickFromTenant": false,
+                "step_variables": []
+            },
+            "status": null,
+            "top": "228",
+            "left": "552",
+            "stepType": "\/api\/3\/workflow_step_types\/0bfed618-0316-11e7-93ae-92361f002671",
+            "group": null,
+            "uuid": "b8d6758c-785d-4ca8-a43a-1636dfe894f1"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "route": "92d6feae-02b1-4638-b3fc-25ac3db1590a",
+                "resources": [
+                    "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                    "input": {
+                        "params": [],
+                        "records": "{{vars.input.records}}"
+                    }
+                },
+                "triggerOnSource": true,
+                "displayConditions": {
+                    "alerts": {
+                        "sort": [],
+                        "limit": 30,
+                        "logic": "AND",
+                        "filters": []
+                    }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                    "visible": false,
+                    "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+            },
+            "status": null,
+            "top": "40",
+            "left": "40",
+            "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+            "group": null,
+            "uuid": "d1cea3ae-6be0-4369-adb8-def01c69bc17"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Get Ticket data",
+            "targetStep": "\/api\/3\/workflow_steps\/b8d6758c-785d-4ca8-a43a-1636dfe894f1",
+            "sourceStep": "\/api\/3\/workflow_steps\/d1cea3ae-6be0-4369-adb8-def01c69bc17",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "c193c346-51e5-4be5-ad7a-2294586960dd"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "playbookOrigin": "\/api\/3\/picklists\/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+    "isEditable": true,
+    "uuid": "895025ad-b816-4ab1-a96c-b948c2fc5d98",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": []
+}

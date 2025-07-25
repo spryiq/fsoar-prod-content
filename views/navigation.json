@@ -1,0 +1,343 @@
+{
+    "@context": "\/api\/3\/contexts\/SystemViewTemplate",
+    "@type": "SystemViewTemplate",
+    "type": "app",
+    "config": {
+        "navigation": [
+            {
+                "editMode": false,
+                "icon": "icon icon-dashboard",
+                "mergeType": "merge",
+                "require": {
+                    "action": "read",
+                    "module": "dashboard"
+                },
+                "state": {
+                    "name": "main.dashboard",
+                    "parameters": []
+                },
+                "title": "Dashboard"
+            },
+            {
+                "editMode": false,
+                "icon": "icon icon-queue-members",
+                "mergeType": "merge",
+                "require": {
+                    "action": "read",
+                    "module": "fsr_queues"
+                },
+                "state": {
+                    "name": "main.assignment_automation_entry"
+                },
+                "title": "Queue & Shift Management"
+            },
+            {
+                "editMode": false,
+                "icon": "icon icon-incident-response",
+                "items": [
+                    {
+                        "editMode": false,
+                        "icon": "icon icon-alert",
+                        "require": {
+                            "action": "read",
+                            "module": "alerts"
+                        },
+                        "state": {
+                            "name": "main.modules.list",
+                            "parameters": {
+                                "module": "alerts"
+                            }
+                        },
+                        "title": "Alerts"
+                    },
+                    {
+                        "editMode": false,
+                        "icon": "icon icon-incidents",
+                        "require": {
+                            "action": "read",
+                            "module": "incidents"
+                        },
+                        "state": {
+                            "name": "main.modules.list",
+                            "parameters": {
+                                "module": "incidents"
+                            }
+                        },
+                        "title": "Incidents"
+                    },
+                    {
+                        "editMode": false,
+                        "icon": "icon icon-tasks",
+                        "require": {
+                            "action": "read",
+                            "module": "tasks"
+                        },
+                        "state": {
+                            "name": "main.modules.list",
+                            "parameters": {
+                                "module": "tasks"
+                            }
+                        },
+                        "title": "Tasks"
+                    },
+                    {
+                        "editMode": false,
+                        "icon": "icon icon-indicators",
+                        "require": {
+                            "action": "read",
+                            "module": "indicators"
+                        },
+                        "state": {
+                            "name": "main.modules.list",
+                            "parameters": {
+                                "module": "indicators"
+                            }
+                        },
+                        "title": "Indicators"
+                    },
+                    {
+                        "editMode": false,
+                        "icon": "fa fa-money",
+                        "require": {
+                            "action": "read",
+                            "module": "campaigns"
+                        },
+                        "state": {
+                            "name": "main.modules.list",
+                            "parameters": {
+                                "module": "campaigns"
+                            }
+                        },
+                        "title": "Campaigns"
+                    },
+                    {
+                        "editMode": false,
+                        "icon": "icon icon-email-templates",
+                        "require": {
+                            "action": "read",
+                            "module": "communication"
+                        },
+                        "state": {
+                            "name": "main.modules.list",
+                            "parameters": {
+                                "module": "communication"
+                            }
+                        },
+                        "title": "Communications"
+                    },
+                    {
+                        "editMode": false,
+                        "icon": "icon icon-war-room",
+                        "require": {
+                            "action": "read",
+                            "module": "warrooms"
+                        },
+                        "state": {
+                            "name": "main.modules.list",
+                            "parameters": {
+                                "module": "warrooms"
+                            }
+                        },
+                        "title": "War Rooms"
+                    }
+                ],
+                "mergeType": "merge",
+                "title": "Incident Response"
+            },
+            {
+                "editMode": false,
+                "icon": "icon icon-automation",
+                "items": [
+                    {
+                        "editMode": false,
+                        "icon": "icon icon-playbooks",
+                        "require": {
+                            "action": "read",
+                            "module": "workflows"
+                        },
+                        "state": {
+                            "name": "main.workflow"
+                        },
+                        "title": "Playbooks"
+                    },
+                    {
+                        "editMode": false,
+                        "icon": "icon icon-connectors",
+                        "require": {
+                            "action": "read",
+                            "module": "connectors"
+                        },
+                        "state": {
+                            "name": "main.connectors"
+                        },
+                        "title": "Connectors"
+                    },
+                    {
+                        "editMode": false,
+                        "icon": "icon icon-updates",
+                        "require": {
+                            "action": "read",
+                            "module": "connectors"
+                        },
+                        "state": {
+                            "name": "main.dataIngestion"
+                        },
+                        "title": "Data Ingestion"
+                    },
+                    {
+                        "editMode": false,
+                        "icon": "icon icon-schedules",
+                        "require": {
+                            "action": "read",
+                            "module": "schedules"
+                        },
+                        "state": {
+                            "name": "main.schedules"
+                        },
+                        "title": "Schedules"
+                    }
+                ],
+                "mergeType": "merge",
+                "title": "Automation"
+            },
+            {
+                "editMode": false,
+                "icon": "icon icon-resources",
+                "items": [
+                    {
+                        "editMode": false,
+                        "icon": "icon icon-attachments",
+                        "require": {
+                            "action": "read",
+                            "module": "attachments"
+                        },
+                        "state": {
+                            "name": "main.modules.list",
+                            "parameters": {
+                                "module": "attachments"
+                            }
+                        },
+                        "title": "Attachments"
+                    },
+                    {
+                        "editMode": false,
+                        "icon": "icon icon-email-templates",
+                        "require": {
+                            "action": "read",
+                            "module": "email_templates"
+                        },
+                        "state": {
+                            "name": "main.modules.list",
+                            "parameters": {
+                                "module": "email_templates"
+                            }
+                        },
+                        "title": "Email Templates"
+                    },
+                    {
+                        "editMode": false,
+                        "icon": "fa fa-key",
+                        "require": {
+                            "action": "read",
+                            "module": "keys"
+                        },
+                        "state": {
+                            "name": "main.modules.list",
+                            "parameters": {
+                                "module": "keys"
+                            }
+                        },
+                        "title": "Key Store"
+                    },
+                    {
+                        "editMode": false,
+                        "icon": "icon icon-assets",
+                        "require": {
+                            "action": "read",
+                            "module": "assets"
+                        },
+                        "state": {
+                            "name": "main.modules.list",
+                            "parameters": {
+                                "module": "assets"
+                            }
+                        },
+                        "title": "Assets"
+                    }
+                ],
+                "mergeType": "merge",
+                "title": "Resources"
+            },
+            {
+                "editMode": false,
+                "icon": "icon icon-reports",
+                "mergeType": "merge",
+                "require": {
+                    "action": "read",
+                    "module": "reporting"
+                },
+                "state": {
+                    "name": "main.reporting",
+                    "parameters": []
+                },
+                "title": "Reports"
+            },
+            {
+                "editMode": false,
+                "icon": "icon icon-widget",
+                "mergeType": "merge",
+                "require": {
+                    "action": "read",
+                    "module": "widgets"
+                },
+                "state": {
+                    "name": "main.widgets",
+                    "parameters": []
+                },
+                "title": "Widget Library"
+            },
+            {
+                "editMode": false,
+                "icon": "icon icon-content-hub",
+                "mergeType": "merge",
+                "require": {
+                    "action": "read",
+                    "module": "contentHub"
+                },
+                "state": {
+                    "name": "main.marketplace"
+                },
+                "title": "Content Hub"
+            },
+            {
+                "editMode": false,
+                "icon": "icon icon-help",
+                "mergeType": "merge",
+                "openInNewTab": true,
+                "state": {
+                    "name": "main.pages",
+                    "parameters": {
+                        "module": "help"
+                    }
+                },
+                "title": "Help",
+                "url": "https:\/\/docs.fortinet.com\/product\/fortisoar"
+            },
+            {
+                "editMode": false,
+                "icon": "icon icon-users",
+                "mergeType": "merge",
+                "openInNewTab": true,
+                "state": {
+                    "name": "main.pages",
+                    "parameters": {
+                        "module": "user-community"
+                    }
+                },
+                "title": "User Community",
+                "url": "https:\/\/fortisoar.fortinet.com"
+            }
+        ]
+    },
+    "uuid": "navigation"
+}

@@ -1,0 +1,616 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Referenced > Update the SOAR Alert",
+    "aliasName": null,
+    "tag": null,
+    "description": null,
+    "isActive": true,
+    "debug": true,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [
+        "ticket_status",
+        "closure_Comments",
+        "closure_reason",
+        "sdp_request_ID",
+        "alertID"
+    ],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/4dc865c8-012e-4326-8be5-252b723ea734",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/5866e6bf-fc30-491a-8cfd-bc0312fd3f90",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Desicion Point",
+            "description": null,
+            "arguments": {
+                "conditions": [
+                    {
+                        "option": "Yes",
+                        "step_iri": "\/api\/3\/workflow_steps\/186de807-9589-49d5-b581-df08644c8fef",
+                        "condition": "{{ vars.steps.Update_The_Alert_record.status.itemValue == \"Closed\" }}",
+                        "step_name": "SIEM Incident Mapping For Closed Status"
+                    },
+                    {
+                        "option": "No",
+                        "default": true,
+                        "step_iri": "\/api\/3\/workflow_steps\/c2610306-17d8-40e5-9607-0648ebe28fdb",
+                        "step_name": "SIEM Incident Mapping For Other Status"
+                    }
+                ],
+                "step_variables": []
+            },
+            "status": null,
+            "top": "1110",
+            "left": "475",
+            "stepType": "\/api\/3\/workflow_step_types\/12254cf5-5db7-4b1a-8cb1-3af081924b28",
+            "group": null,
+            "uuid": "4d5a28eb-34cc-4e8f-a4c1-c01048b91e3b"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Get Alert Data",
+            "description": null,
+            "arguments": {
+                "alertdata": "{{vars.input.params.alertID}}"
+            },
+            "status": null,
+            "top": "165",
+            "left": "475",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "3408fe31-736b-45b0-be86-f29eedc3b7d8"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Get Incident ID",
+            "description": null,
+            "arguments": {
+                "siem_incidentId": "{{vars.src_data.incident_data.incidentId}}"
+            },
+            "status": null,
+            "top": "440",
+            "left": "480",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "6b3306f0-e4f7-4eda-ae6b-f8bd41c08446"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Get Source Data",
+            "description": null,
+            "arguments": {
+                "src_data": "{{vars.alertdata.sourcedata}}",
+                "alert_iri": "{{vars.alertdata['@id']}}"
+            },
+            "status": null,
+            "top": "300",
+            "left": "475",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "b06bfa23-0a57-48e0-99a4-1ecef393c7d4"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Incident Status In SIEM",
+            "description": null,
+            "arguments": {
+                "inprogress_incident_siem_status": "{{vars.inprogress_incident_siem_mapping.get(vars.alert_clouser_Status)}}"
+            },
+            "status": null,
+            "top": "1380",
+            "left": "660",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "7febd7da-1df6-4d00-9b34-c4d720c95447"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Is Alert Found",
+            "description": null,
+            "arguments": {
+                "conditions": [
+                    {
+                        "option": "Yes",
+                        "step_iri": "\/api\/3\/workflow_steps\/7b0134ed-d15c-4c1d-81e7-8371fb728111",
+                        "condition": "{{ vars.siem_incidentId != None or vars.siem_incidentId != \"\" }}",
+                        "step_name": "Update the Alert with Latest Changes"
+                    },
+                    {
+                        "option": "No",
+                        "default": true,
+                        "step_iri": "\/api\/3\/workflow_steps\/e80a68a1-5c8c-4752-8210-d392b1533419",
+                        "step_name": "SDP Request ID Not Found"
+                    }
+                ],
+                "step_variables": []
+            },
+            "status": null,
+            "top": "570",
+            "left": "475",
+            "stepType": "\/api\/3\/workflow_step_types\/12254cf5-5db7-4b1a-8cb1-3af081924b28",
+            "group": null,
+            "uuid": "f75092ec-2dc3-413d-8c6d-da5782591aab"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Is Alert Updated",
+            "description": null,
+            "arguments": {
+                "conditions": [
+                    {
+                        "default": true,
+                        "step_iri": "\/api\/3\/workflow_steps\/6ba6e161-a4e5-4d52-9f3f-34cb03100998",
+                        "step_name": "Update The Alert record"
+                    }
+                ],
+                "step_variables": []
+            },
+            "status": null,
+            "top": "840",
+            "left": "300",
+            "stepType": "\/api\/3\/workflow_step_types\/12254cf5-5db7-4b1a-8cb1-3af081924b28",
+            "group": null,
+            "uuid": "4b24eada-87ad-49b5-a7d5-569bd2322547"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Mapping Of Resolve Incident In SIEM",
+            "description": null,
+            "arguments": {
+                "resolve_status_siem": "{{vars.resovleincident_siem_mapping.get(vars.alert_clouser_reason)}}"
+            },
+            "status": null,
+            "top": "1380",
+            "left": "300",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "e79dbf2f-72fd-4fd1-9866-74b231ed6efa"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "No Opreation",
+            "description": null,
+            "arguments": {
+                "params": [],
+                "version": "3.4.0",
+                "connector": "cyops_utilities",
+                "operation": "no_op",
+                "operationTitle": "Utils: No Operation",
+                "step_variables": []
+            },
+            "status": null,
+            "top": "840",
+            "left": "650",
+            "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
+            "group": null,
+            "uuid": "0d2ac54e-9de4-43fb-b91f-06085b72e6dd"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "SDP Request ID Not Found",
+            "description": null,
+            "arguments": {
+                "type": "InputBased",
+                "input": {
+                    "schema": {
+                        "title": "SDP Request ID Not Found In SOAR",
+                        "description": "SDP Request ID or corelated Alert Not Found In SOAR.",
+                        "inputVariables": []
+                    }
+                },
+                "record": "",
+                "is_approval": false,
+                "owner_detail": {
+                    "isAssigned": false
+                },
+                "isRecordLinked": false,
+                "step_variables": [],
+                "response_mapping": {
+                    "options": [
+                        {
+                            "option": "OK",
+                            "step_iri": "\/api\/3\/workflow_steps\/0d2ac54e-9de4-43fb-b91f-06085b72e6dd"
+                        }
+                    ],
+                    "duplicateOption": false,
+                    "customSuccessMessage": "Awaiting Playbook resumed successfully."
+                },
+                "email_notification": {
+                    "enabled": false,
+                    "smtpParameters": []
+                },
+                "inline_channel_list": [],
+                "external_channel_list": [],
+                "unauthenticated_input": false
+            },
+            "status": null,
+            "top": "705",
+            "left": "650",
+            "stepType": "\/api\/3\/workflow_step_types\/fc04082a-d7dc-4299-96fb-6837b1baa0fe",
+            "group": null,
+            "uuid": "e80a68a1-5c8c-4752-8210-d392b1533419"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "SIEM Incident Mapping For Closed Status",
+            "description": null,
+            "arguments": {
+                "alert_clouser_reason": "{{vars.steps.Update_The_Alert_record.closureReason.itemValue}}",
+                "resovleincident_siem_mapping": "{\n\"Duplicate\":\"False Positive\",\n\"Escalated to Incident\":\"In Progress\",\n\"False Positive\":\"False Positive\",\n\"Invalid\":\"False Positive\",\n\"Resolved\":\"True Positive\",\n\"Tasks Completed\":\"True Positive\",\n}"
+            },
+            "status": null,
+            "top": "1240",
+            "left": "300",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "186de807-9589-49d5-b581-df08644c8fef"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "SIEM Incident Mapping For Other Status",
+            "description": null,
+            "arguments": {
+                "alert_clouser_Status": "{{vars.steps.Update_The_Alert_record.status.itemValue}}",
+                "inprogress_incident_siem_mapping": "{\n\"Investigating\":\"In Progress\",\n\"Pending\":\"In Progress\",\n\"Re-Opened\":\"Open\"\n}"
+            },
+            "status": null,
+            "top": "1245",
+            "left": "650",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "c2610306-17d8-40e5-9607-0648ebe28fdb"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "__triggerLimit": true,
+                "step_variables": {
+                    "input": {
+                        "params": []
+                    }
+                },
+                "triggerOnSource": true,
+                "triggerOnReplicate": false
+            },
+            "status": null,
+            "top": "30",
+            "left": "475",
+            "stepType": "\/api\/3\/workflow_step_types\/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+            "group": null,
+            "uuid": "5866e6bf-fc30-491a-8cfd-bc0312fd3f90"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "The Alert record is Not updated",
+            "description": null,
+            "arguments": {
+                "message": {
+                    "tags": [],
+                    "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
+                    "tenant": "",
+                    "thread": false,
+                    "content": "<p>SDP Reverse Sync Status<\/p>\n<p>&nbsp;<\/p>\n<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\">\n<tbody>\n<tr>\n<th style=\"width: 49.896%; background-color: #0d9a8e;\">Description<\/th>\n<th style=\"width: 49.896%; background-color: #0d9a8e;\">Value<\/th>\n<\/tr>\n<tr>\n<td style=\"width: 49.896%;\">SDP Reverse Sync<\/td>\n<td style=\"width: 49.896%;\"><span class=\"badge badge-pill badge-danger\" style=\"background: red; color: #fff;\"><strong>Failed<\/strong> <\/span><\/td>\n<\/tr>\n<\/tbody>\n<\/table>",
+                    "records": "{{vars.alert_iri}}",
+                    "parentstepid": "\/api\/3\/workflow_steps\/7b0134ed-d15c-4c1d-81e7-8371fb728111"
+                },
+                "resource": [],
+                "operation": "Append",
+                "collection": "{{vars.alert_iri}}",
+                "__recommend": [],
+                "collectionType": "\/api\/3\/alerts",
+                "fieldOperation": [],
+                "step_variables": []
+            },
+            "status": null,
+            "top": "975",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928722",
+            "group": null,
+            "uuid": "fe5df96c-7a78-40c1-8cde-52eb4b58830f"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Update Incident In SEIEM As Closed",
+            "description": null,
+            "arguments": {
+                "name": "Fortinet FortiSIEM",
+                "config": "a8f58c18-0fcd-4d09-be7f-be8ed001986f",
+                "params": {
+                    "comments": "",
+                    "incidentId": "{{vars.siem_incidentId}}",
+                    "resolution": "{{vars.resolve_status_siem}}",
+                    "externalTicketId": "",
+                    "externalAssignedUser": ""
+                },
+                "version": "5.2.1",
+                "connector": "fortinet-fortisiem",
+                "operation": "update_incident",
+                "ignore_errors": true,
+                "operationTitle": "Update Incident",
+                "pickFromTenant": false,
+                "step_variables": []
+            },
+            "status": null,
+            "top": "1515",
+            "left": "300",
+            "stepType": "\/api\/3\/workflow_step_types\/0bfed618-0316-11e7-93ae-92361f002671",
+            "group": null,
+            "uuid": "b4f25cbe-6bce-4a84-bd75-bc843c84f71e"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Update Incident In SIEM As In Progress",
+            "description": null,
+            "arguments": {
+                "name": "Fortinet FortiSIEM",
+                "config": "a8f58c18-0fcd-4d09-be7f-be8ed001986f",
+                "params": {
+                    "comments": "",
+                    "incidentId": "12044",
+                    "resolution": "{{vars.inprogress_incident_siem_status}}",
+                    "externalTicketId": "",
+                    "externalAssignedUser": ""
+                },
+                "version": "5.2.3",
+                "connector": "fortinet-fortisiem",
+                "operation": "update_incident",
+                "ignore_errors": true,
+                "operationTitle": "Update Incident",
+                "pickFromTenant": false,
+                "step_variables": []
+            },
+            "status": null,
+            "top": "1520",
+            "left": "660",
+            "stepType": "\/api\/3\/workflow_step_types\/0bfed618-0316-11e7-93ae-92361f002671",
+            "group": null,
+            "uuid": "cfbf5572-f36e-4c15-84a5-b8e582aeabb1"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Update The Alert record",
+            "description": null,
+            "arguments": {
+                "message": {
+                    "tags": [],
+                    "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
+                    "tenant": "",
+                    "thread": false,
+                    "content": "<p>SDP Reverse Sync Status<\/p>\n<p>&nbsp;<\/p>\n<table border=\"1\" style=\"border-collapse: collapse; width: 100%;\">\n<tbody>\n<tr>\n<th style=\"width: 49.896%; background-color: #0d9a8e;\">Description<\/th>\n<th style=\"width: 49.896%; background-color: #0d9a8e;\">Value<\/th>\n<\/tr>\n<tr>\n<td style=\"width: 49.896%;\">SDP Reverse Sync<\/td>\n<td style=\"width: 49.896%;\"><span style=\"background: green; color: #fff;\" class=\"badge badge-pill badge-danger\"><strong>completed<\/strong><\/span><\/td>\n<\/tr>\n<\/tbody>\n<\/table>",
+                    "records": "{{vars.alert_iri}}"
+                },
+                "resource": [],
+                "operation": "Append",
+                "collection": "{{vars.alert_iri}}",
+                "__recommend": [],
+                "collectionType": "\/api\/3\/alerts",
+                "fieldOperation": [],
+                "step_variables": []
+            },
+            "status": null,
+            "top": "975",
+            "left": "475",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928722",
+            "group": null,
+            "uuid": "6ba6e161-a4e5-4d52-9f3f-34cb03100998"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Update the Alert with Latest Changes",
+            "description": null,
+            "arguments": {
+                "message": {
+                    "tags": [],
+                    "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
+                    "tenant": "",
+                    "thread": false,
+                    "content": "<p>{{vars.input.params['closure_note']}}<\/p>",
+                    "records": "{{vars.alert_iri}}"
+                },
+                "resource": {
+                    "status": "{{\"AlertStatus\" | picklist(vars.input.params['ticket_status'], \"@id\")}}",
+                    "closureNotes": "{{vars.input.params['closure_Comments']}}",
+                    "closureReason": "{{\"Closure Reason\" | picklist(vars.input.params['closure_reason'], \"@id\")}}"
+                },
+                "operation": "Append",
+                "collection": "{{vars.alert_iri}}",
+                "__recommend": [],
+                "collectionType": "\/api\/3\/alerts",
+                "fieldOperation": [],
+                "step_variables": []
+            },
+            "status": null,
+            "top": "705",
+            "left": "300",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928722",
+            "group": null,
+            "uuid": "7b0134ed-d15c-4c1d-81e7-8371fb728111"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Copy of Mapping Of Resolve Incident In SIEM -> Update Incident In SIEM As In Progress",
+            "targetStep": "\/api\/3\/workflow_steps\/cfbf5572-f36e-4c15-84a5-b8e582aeabb1",
+            "sourceStep": "\/api\/3\/workflow_steps\/7febd7da-1df6-4d00-9b34-c4d720c95447",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "710948d9-9d7b-4206-9542-15d48c64cb94"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Desicion Point -> Required Data",
+            "targetStep": "\/api\/3\/workflow_steps\/186de807-9589-49d5-b581-df08644c8fef",
+            "sourceStep": "\/api\/3\/workflow_steps\/4d5a28eb-34cc-4e8f-a4c1-c01048b91e3b",
+            "label": "Yes",
+            "isExecuted": false,
+            "group": null,
+            "uuid": "68f5a5f4-0da3-44e7-a051-48a32dc6e452"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Desicion Point -> SIEM Incident Mapping For Other Status",
+            "targetStep": "\/api\/3\/workflow_steps\/c2610306-17d8-40e5-9607-0648ebe28fdb",
+            "sourceStep": "\/api\/3\/workflow_steps\/4d5a28eb-34cc-4e8f-a4c1-c01048b91e3b",
+            "label": "No",
+            "isExecuted": false,
+            "group": null,
+            "uuid": "79ccbecc-207b-490e-8260-1ee3d1d99e05"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Get Alert Data -> Get Alert Details",
+            "targetStep": "\/api\/3\/workflow_steps\/b06bfa23-0a57-48e0-99a4-1ecef393c7d4",
+            "sourceStep": "\/api\/3\/workflow_steps\/3408fe31-736b-45b0-be86-f29eedc3b7d8",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "79675c5a-c513-45bc-94b9-a42ce097df60"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Get Incident ID -> Is Alert Found",
+            "targetStep": "\/api\/3\/workflow_steps\/f75092ec-2dc3-413d-8c6d-da5782591aab",
+            "sourceStep": "\/api\/3\/workflow_steps\/6b3306f0-e4f7-4eda-ae6b-f8bd41c08446",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "4025caec-d48c-45e6-8aae-276f4a58ecac"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "incident id -> Copy of incident id",
+            "targetStep": "\/api\/3\/workflow_steps\/6b3306f0-e4f7-4eda-ae6b-f8bd41c08446",
+            "sourceStep": "\/api\/3\/workflow_steps\/b06bfa23-0a57-48e0-99a4-1ecef393c7d4",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "37f33c58-4695-4757-aed1-41b84e48d1c8"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Is Alert Updated -> Copy of Update The Alert record",
+            "targetStep": "\/api\/3\/workflow_steps\/fe5df96c-7a78-40c1-8cde-52eb4b58830f",
+            "sourceStep": "\/api\/3\/workflow_steps\/4b24eada-87ad-49b5-a7d5-569bd2322547",
+            "label": "",
+            "isExecuted": false,
+            "group": null,
+            "uuid": "c1956c90-2f11-4dc0-93b6-2e1954ba3df3"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Is Alert Updated -> Update The Alert record",
+            "targetStep": "\/api\/3\/workflow_steps\/6ba6e161-a4e5-4d52-9f3f-34cb03100998",
+            "sourceStep": "\/api\/3\/workflow_steps\/4b24eada-87ad-49b5-a7d5-569bd2322547",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "4ed94f4d-f59a-46c5-aa37-767da9a12c6d"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Is ID Found -> SDP Request ID Not Found",
+            "targetStep": "\/api\/3\/workflow_steps\/e80a68a1-5c8c-4752-8210-d392b1533419",
+            "sourceStep": "\/api\/3\/workflow_steps\/f75092ec-2dc3-413d-8c6d-da5782591aab",
+            "label": "No",
+            "isExecuted": false,
+            "group": null,
+            "uuid": "2477c982-04e1-4e6d-aa72-e89a9d2bfb39"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Is ID Found -> Update the Alert with Latest Changes",
+            "targetStep": "\/api\/3\/workflow_steps\/7b0134ed-d15c-4c1d-81e7-8371fb728111",
+            "sourceStep": "\/api\/3\/workflow_steps\/f75092ec-2dc3-413d-8c6d-da5782591aab",
+            "label": "Yes",
+            "isExecuted": false,
+            "group": null,
+            "uuid": "70416d1b-dfb1-44d2-8253-f008225896cb"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Mapping Of Resolve Incident In SIEM -> Update Incident In SEIEM",
+            "targetStep": "\/api\/3\/workflow_steps\/b4f25cbe-6bce-4a84-bd75-bc843c84f71e",
+            "sourceStep": "\/api\/3\/workflow_steps\/e79dbf2f-72fd-4fd1-9866-74b231ed6efa",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "86793900-28f3-4a5f-8c0f-8db9a2c97a37"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Required Data -> Copy of Required Data",
+            "targetStep": "\/api\/3\/workflow_steps\/e79dbf2f-72fd-4fd1-9866-74b231ed6efa",
+            "sourceStep": "\/api\/3\/workflow_steps\/186de807-9589-49d5-b581-df08644c8fef",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "cd3200e8-179d-4653-a8c5-7b0f62ed8eed"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "SDP Request ID Not Found -> No Opreation",
+            "targetStep": "\/api\/3\/workflow_steps\/0d2ac54e-9de4-43fb-b91f-06085b72e6dd",
+            "sourceStep": "\/api\/3\/workflow_steps\/e80a68a1-5c8c-4752-8210-d392b1533419",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "557af0c9-74fc-451e-a13b-34271fb6de36"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "SIEM Incident Mapping For Other Status -> Copy of Mapping Of Resolve Incident In SIEM",
+            "targetStep": "\/api\/3\/workflow_steps\/7febd7da-1df6-4d00-9b34-c4d720c95447",
+            "sourceStep": "\/api\/3\/workflow_steps\/c2610306-17d8-40e5-9607-0648ebe28fdb",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "49a9a9b4-c97a-4ae7-a1ad-2ca3b9ddaa98"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Get Alert Data",
+            "targetStep": "\/api\/3\/workflow_steps\/3408fe31-736b-45b0-be86-f29eedc3b7d8",
+            "sourceStep": "\/api\/3\/workflow_steps\/5866e6bf-fc30-491a-8cfd-bc0312fd3f90",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "6c66900d-bca4-489b-a34b-2092addfccde"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Update The Alert record -> Desicion Point",
+            "targetStep": "\/api\/3\/workflow_steps\/4d5a28eb-34cc-4e8f-a4c1-c01048b91e3b",
+            "sourceStep": "\/api\/3\/workflow_steps\/6ba6e161-a4e5-4d52-9f3f-34cb03100998",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "fb4ff9b2-475f-4fc8-9ef9-42d5067fce9e"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Update the Alert with Latest Changes -> Is Alert Updated",
+            "targetStep": "\/api\/3\/workflow_steps\/4b24eada-87ad-49b5-a7d5-569bd2322547",
+            "sourceStep": "\/api\/3\/workflow_steps\/7b0134ed-d15c-4c1d-81e7-8371fb728111",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "1a814cc6-712c-4260-9b7c-09a810793d40"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "playbookOrigin": "\/api\/3\/picklists\/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+    "isEditable": true,
+    "uuid": "3ae32443-bd45-410e-a2d3-d7fc8479e730",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": []
+}
