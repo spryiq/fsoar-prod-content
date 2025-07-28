@@ -1,0 +1,11 @@
+{
+    "@context": "\/api\/3\/contexts\/WorkflowCollection",
+    "@type": "WorkflowCollection",
+    "name": "vivek",
+    "description": null,
+    "visible": true,
+    "image": null,
+    "uuid": "33f0ab21-60d4-4f9b-8178-a795be8399db",
+    "deletedAt": null,
+    "recordTags": []
+}

@@ -1,6 +1,7 @@
 [
     "Advisory",
     "Alerts",
+    "Cyble",
     "DeDuplicate",
     "EDR",
     "Enrichment",
@@ -28,8 +29,12 @@
     "Utility",
     "alerts",
     "create",
+    "cyble-vision-v2",
+    "dataingestion",
+    "fetch",
     "incidents",
     "indicators",
+    "ingest",
     "link",
     "similarity",
     "system"

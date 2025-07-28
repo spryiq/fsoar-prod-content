@@ -1,0 +1,307 @@
+{
+    "@context": "\/api\/3\/contexts\/Workflow",
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "CIB Dashboard",
+    "aliasName": null,
+    "tag": null,
+    "description": null,
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/33f0ab21-60d4-4f9b-8178-a795be8399db",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/184383bc-b1d8-4194-972d-86a4c10e5550",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Fetch Incidents",
+            "description": null,
+            "arguments": {
+                "query": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": [
+                        {
+                            "type": "datetime",
+                            "logic": "AND",
+                            "_field": "createDate",
+                            "_value": {
+                                "differenceType": "months",
+                                "differenceValue": -3
+                            },
+                            "filters": [
+                                {
+                                    "type": "datetime",
+                                    "field": "createDate",
+                                    "value": "{{getRelativeDate(0,-3,\"start\",\"start\",\"start\",\"start\")}}",
+                                    "operator": "gte"
+                                },
+                                {
+                                    "type": "datetime",
+                                    "field": "createDate",
+                                    "value": "{{getRelativeDate(0,0,0,0,0,0)}}",
+                                    "operator": "lte"
+                                }
+                            ],
+                            "_operator": "date"
+                        }
+                    ]
+                },
+                "module": "alerts?$limit=5000",
+                "checkboxFields": false,
+                "step_variables": {
+                    "alertList": "{% set monthwise_data = {} %}\n\n{% for alert in vars.result %}\n  {% if alert['createDate'] is not none %}\n    {% set dateformat = arrow.get(alert['createDate']).to(\"UTC\").format(\"YYYY-MM-DD HH:mm:ss ZZ\") %}\n    {% set year = dateformat[0:4] %}\n    {% set month = dateformat[5:7] %}\n    {% set month_key = year ~ '-' ~ month %}\n\n    {% if monthwise_data[month_key] is not defined %}\n      {% do monthwise_data.update({month_key: [alert]}) %}\n    {% else %}\n      {% do monthwise_data[month_key].append(alert) %}\n    {% endif %}\n  {% endif %}\n{% endfor %}\n{{monthwise_data }}"
+                }
+            },
+            "status": null,
+            "top": "300",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928770",
+            "group": null,
+            "uuid": "7c532a03-2929-4b7d-a473-bd8cabc56427"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Get Data",
+            "description": null,
+            "arguments": {
+                "epochRange": "{% set start = arrow.utcnow() %}\n{% set end = start.shift(months=vars.input.params.numberOfMonths) %}\n{% set day_count = (end - start).days %}\n{% set ranges = [] %}\n{% for i in range(day_count) %}\n    {% set day_start = start.shift(days=i).int_timestamp %}\n    {% set day_end = start.shift(days=i+1).int_timestamp %}\n    {% do ranges.append({'start': day_start, 'end': day_end}) %}\n{% endfor %}\n{{ ranges }}",
+                "current_time": "{{arrow.utcnow().int_timestamp}}",
+                "nthmonthTime": "{{(arrow.utcnow().shift(months=vars.input.params.numberOfMonths).int_timestamp)}}"
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "38e325a4-aab6-4f43-84c6-c0e5235e82b4"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Get MonthWise incident Count",
+            "description": null,
+            "arguments": {
+                "incidentCount": "{% set monthwise_count = {} %}\n{% for alert in vars.steps.Fetch_Incidents %}\n  {% if alert['createDate'] is not none %}\n    {% set dateformat = arrow.get(alert['createDate']).to(\"UTC\").format(\"YYYY-MM-DD HH:mm:ss ZZ\") %}\n    {% set year = dateformat[0:4] %}\n    {% set month = dateformat[5:7] %}\n    {% set month_key = year ~ '-' ~ month %}\n    {% if monthwise_count[month_key] is not defined %}\n      {% set monthwise_count = monthwise_count.update({month_key: 1}) or monthwise_count %}\n    {% else %}\n      {% set monthwise_count = monthwise_count.update({month_key: monthwise_count[month_key] + 1}) or monthwise_count %}\n    {% endif %}\n  {% endif %}\n{% endfor %}\n\n{{ monthwise_count }}"
+            },
+            "status": null,
+            "top": "435",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "3ca67bae-face-490a-8609-a267f3250c94"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Get Overall Threat Rating JSON",
+            "description": null,
+            "arguments": {
+                "query": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": [
+                        {
+                            "type": "primitive",
+                            "field": "id",
+                            "value": "871",
+                            "operator": "eq",
+                            "_operator": "eq"
+                        }
+                    ]
+                },
+                "module": "alerts?$limit=30",
+                "step_variables": {
+                    "threatRatingJSON": "{{vars.result[0].iPAddresses}}"
+                }
+            },
+            "status": null,
+            "top": "570",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928770",
+            "group": null,
+            "uuid": "ac74d68d-eb75-46e0-8ec0-8c2aa0697a1a"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "route": "aed05ba3-9247-4b3a-8774-6efdaf6cd690",
+                "resources": [
+                    "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [
+                    {
+                        "name": "numberOfMonths",
+                        "type": "integer",
+                        "label": "NumberOfMonths",
+                        "title": "Integer Field",
+                        "usable": true,
+                        "tooltip": "",
+                        "dataType": "integer",
+                        "formType": "integer",
+                        "required": false,
+                        "_expanded": true,
+                        "mmdUpdate": true,
+                        "collection": false,
+                        "searchable": true,
+                        "templateUrl": "app\/components\/form\/fields\/integer.html",
+                        "defaultValue": 3,
+                        "_previousName": "n",
+                        "playbookField": true,
+                        "lengthConstraint": true,
+                        "allowedEncryption": false,
+                        "allowedGridColumn": true,
+                        "jinjaExpressionView": true,
+                        "useRecordFieldDefault": false
+                    }
+                ],
+                "step_variables": {
+                    "input": {
+                        "params": {
+                            "numberOfMonths": "{{vars.request.data[\"numberOfMonths\"]}}"
+                        },
+                        "records": "{{vars.input.records}}"
+                    }
+                },
+                "_promptexpanded": true,
+                "triggerOnSource": true,
+                "displayConditions": {
+                    "alerts": {
+                        "sort": [],
+                        "limit": 30,
+                        "logic": "AND",
+                        "filters": []
+                    }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                    "visible": false,
+                    "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+            },
+            "status": null,
+            "top": "30",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+            "group": null,
+            "uuid": "184383bc-b1d8-4194-972d-86a4c10e5550"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Update Json Column For Overall Threat Rating",
+            "description": null,
+            "arguments": {
+                "updatedDataOTR": "{% set jsonValue = vars.threatRatingJSON %}\n{% set ns = namespace(\n  x_vals = ['x'],\n  increase_vals = ['increase'],\n  constant_vals = ['constant'],\n  decrease_vals = ['decrease'],\n  prev_count = none\n) %}\n\n{% set sorted_keys = vars.incidentCount.keys() | sort %}\n\n{% for key in sorted_keys %}\n  {% set count = vars.incidentCount[key] %}\n  {% do ns.x_vals.append(key) %}\n\n  {% if ns.prev_count is none %}\n    {% do ns.increase_vals.append(none) %}\n    {% do ns.constant_vals.append(count) %}\n    {% do ns.decrease_vals.append(none) %}\n  {% else %}\n    {% if count > ns.prev_count %}\n      {% do ns.increase_vals.append(count) %}\n      {% do ns.constant_vals.append(none) %}\n      {% do ns.decrease_vals.append(none) %}\n    {% elif count == ns.prev_count %}\n      {% do ns.increase_vals.append(none) %}\n      {% do ns.constant_vals.append(count) %}\n      {% do ns.decrease_vals.append(none) %}\n    {% else %}\n      {% do ns.increase_vals.append(none) %}\n      {% do ns.constant_vals.append(none) %}\n      {% do ns.decrease_vals.append(count) %}\n    {% endif %}\n  {% endif %}\n\n  {% set ns.prev_count = count %}\n{% endfor %}\n\n{% set updated_columns = [ns.x_vals, ns.increase_vals, ns.constant_vals, ns.decrease_vals] %}\n{% set _ = jsonValue['data'].update({'columns': updated_columns}) %}\n\n{{ jsonValue }}"
+            },
+            "status": null,
+            "top": "705",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "d219e9ae-9b76-4e5c-bcd2-c3cc85d1e352"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Update Overall Threat Rating Alert",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "iPAddresses": "{{vars.updatedDataOTR}}"
+                },
+                "operation": "Append",
+                "collection": "{{vars.steps.Get_Overall_Threat_Rating_JSON[0]['@id']}}",
+                "__recommend": [],
+                "collectionType": "\/api\/3\/alerts",
+                "fieldOperation": [],
+                "step_variables": []
+            },
+            "status": null,
+            "top": "840",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928722",
+            "group": null,
+            "uuid": "4c423204-d92c-4999-900a-c260082fef7d"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Fetch Incidents -> Get MonthWise incident Count",
+            "targetStep": "\/api\/3\/workflow_steps\/3ca67bae-face-490a-8609-a267f3250c94",
+            "sourceStep": "\/api\/3\/workflow_steps\/7c532a03-2929-4b7d-a473-bd8cabc56427",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "c3eb38e8-eebf-43b1-b5b7-d8e20e3a1354"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Get Data -> Fetch Incidents",
+            "targetStep": "\/api\/3\/workflow_steps\/7c532a03-2929-4b7d-a473-bd8cabc56427",
+            "sourceStep": "\/api\/3\/workflow_steps\/38e325a4-aab6-4f43-84c6-c0e5235e82b4",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "5f2b707f-2f99-4c87-8c36-4b9ef2e7bae0"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Get MonthWise incident Count -> Get Overall Threat Rating JSON",
+            "targetStep": "\/api\/3\/workflow_steps\/ac74d68d-eb75-46e0-8ec0-8c2aa0697a1a",
+            "sourceStep": "\/api\/3\/workflow_steps\/3ca67bae-face-490a-8609-a267f3250c94",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "d83e5ef4-b709-4ca6-b181-08eb5062f365"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Get Overall Threat Rating JSON -> Update Json Column For Overall Threat Rating",
+            "targetStep": "\/api\/3\/workflow_steps\/d219e9ae-9b76-4e5c-bcd2-c3cc85d1e352",
+            "sourceStep": "\/api\/3\/workflow_steps\/ac74d68d-eb75-46e0-8ec0-8c2aa0697a1a",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "3a7eeac1-305b-4978-a1a2-0ec856edfd1b"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Get Data",
+            "targetStep": "\/api\/3\/workflow_steps\/38e325a4-aab6-4f43-84c6-c0e5235e82b4",
+            "sourceStep": "\/api\/3\/workflow_steps\/184383bc-b1d8-4194-972d-86a4c10e5550",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "0daeebd5-396d-4c06-8dbb-7f54b98c2b0e"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Update Json Column For Overall Threat Rating -> Update Overall Threat Rating Alert",
+            "targetStep": "\/api\/3\/workflow_steps\/4c423204-d92c-4999-900a-c260082fef7d",
+            "sourceStep": "\/api\/3\/workflow_steps\/d219e9ae-9b76-4e5c-bcd2-c3cc85d1e352",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "aaa9fc9d-6744-4e43-892e-a09ad65d5832"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "playbookOrigin": "\/api\/3\/picklists\/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+    "isEditable": true,
+    "uuid": "9e610b09-e993-4865-bade-58c44075a91c",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": []
+}

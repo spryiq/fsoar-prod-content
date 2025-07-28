@@ -11,7 +11,7 @@
                     "_allChecked": true,
                     "description": "Responsible for Incident Investigation and other remediation and containment-related tasks.",
                     "modulePermissions": {
-                        "hunt": true,
+                        "keys": true,
                         "files": true,
                         "rules": true,
                         "tasks": true,
@@ -25,6 +25,7 @@
                         "tenants": true,
                         "widgets": true,
                         "comments": true,
+                        "scenario": true,
                         "security": true,
                         "warrooms": true,
                         "approvals": true,
@@ -41,25 +42,38 @@
                         "contentHub": true,
                         "fsr_queues": true,
                         "indicators": true,
+                        "workspaces": true,
                         "application": true,
                         "attachments": true,
+                        "mitre_groups": true,
                         "sla_template": true,
                         "announcements": true,
                         "communication": true,
                         "data_archival": true,
+                        "mitre_tactics": true,
+                        "ooredoo_asset": true,
                         "saved_reports": true,
                         "solutionpacks": true,
-                        "email_templates": true
+                        "mitre_software": true,
+                        "ooredoo_roster": true,
+                        "email_templates": true,
+                        "leave_schedules": true,
+                        "mitre_techniques": true,
+                        "mitre_mitigations": true,
+                        "threat_intel_feeds": true,
+                        "preprocessing_rules": true,
+                        "mitre_sub_techniques": true,
+                        "threat_intel_reports": true
                     },
                     "modulePermissionDetails": {
-                        "hunt": {
+                        "keys": {
                             "@type": "ModulePermission",
-                            "module": "hunt",
-                            "canRead": true,
-                            "canCreate": true,
-                            "canDelete": true,
-                            "canUpdate": true,
-                            "canExecute": true,
+                            "module": "keys",
+                            "canRead": false,
+                            "canCreate": false,
+                            "canDelete": false,
+                            "canUpdate": false,
+                            "canExecute": false,
                             "fieldPermissions": [],
                             "_fieldPermissionChanged": false
                         },
@@ -203,6 +217,17 @@
                             "canDelete": true,
                             "canUpdate": true,
                             "canExecute": true,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "scenario": {
+                            "@type": "ModulePermission",
+                            "module": "scenario",
+                            "canRead": false,
+                            "canCreate": false,
+                            "canDelete": false,
+                            "canUpdate": false,
+                            "canExecute": false,
                             "fieldPermissions": [],
                             "_fieldPermissionChanged": false
                         },
@@ -382,6 +407,17 @@
                             "fieldPermissions": [],
                             "_fieldPermissionChanged": false
                         },
+                        "workspaces": {
+                            "@type": "ModulePermission",
+                            "module": "workspaces",
+                            "canRead": true,
+                            "canCreate": true,
+                            "canDelete": true,
+                            "canUpdate": true,
+                            "canExecute": true,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
                         "application": {
                             "@type": "ModulePermission",
                             "module": "application",
@@ -404,14 +440,25 @@
                             "fieldPermissions": [],
                             "_fieldPermissionChanged": false
                         },
+                        "mitre_groups": {
+                            "@type": "ModulePermission",
+                            "module": "mitre_groups",
+                            "canRead": false,
+                            "canCreate": false,
+                            "canDelete": false,
+                            "canUpdate": false,
+                            "canExecute": false,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
                         "sla_template": {
                             "@type": "ModulePermission",
                             "module": "sla_template",
-                            "canRead": true,
-                            "canCreate": true,
+                            "canRead": false,
+                            "canCreate": false,
                             "canDelete": false,
-                            "canUpdate": true,
-                            "canExecute": true,
+                            "canUpdate": false,
+                            "canExecute": false,
                             "fieldPermissions": [],
                             "_fieldPermissionChanged": false
                         },
@@ -448,6 +495,28 @@
                             "fieldPermissions": [],
                             "_fieldPermissionChanged": false
                         },
+                        "mitre_tactics": {
+                            "@type": "ModulePermission",
+                            "module": "mitre_tactics",
+                            "canRead": false,
+                            "canCreate": false,
+                            "canDelete": false,
+                            "canUpdate": false,
+                            "canExecute": false,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "ooredoo_asset": {
+                            "@type": "ModulePermission",
+                            "module": "ooredoo_asset",
+                            "canRead": true,
+                            "canCreate": true,
+                            "canDelete": true,
+                            "canUpdate": true,
+                            "canExecute": true,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
                         "saved_reports": {
                             "@type": "ModulePermission",
                             "module": "saved_reports",
@@ -470,9 +539,108 @@
                             "fieldPermissions": [],
                             "_fieldPermissionChanged": false
                         },
+                        "mitre_software": {
+                            "@type": "ModulePermission",
+                            "module": "mitre_software",
+                            "canRead": false,
+                            "canCreate": false,
+                            "canDelete": false,
+                            "canUpdate": false,
+                            "canExecute": false,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "ooredoo_roster": {
+                            "@type": "ModulePermission",
+                            "module": "ooredoo_roster",
+                            "canRead": true,
+                            "canCreate": true,
+                            "canDelete": true,
+                            "canUpdate": true,
+                            "canExecute": true,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
                         "email_templates": {
                             "@type": "ModulePermission",
                             "module": "email_templates",
+                            "canRead": true,
+                            "canCreate": true,
+                            "canDelete": true,
+                            "canUpdate": true,
+                            "canExecute": true,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "leave_schedules": {
+                            "@type": "ModulePermission",
+                            "module": "leave_schedules",
+                            "canRead": false,
+                            "canCreate": false,
+                            "canDelete": false,
+                            "canUpdate": false,
+                            "canExecute": false,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "mitre_techniques": {
+                            "@type": "ModulePermission",
+                            "module": "mitre_techniques",
+                            "canRead": false,
+                            "canCreate": false,
+                            "canDelete": false,
+                            "canUpdate": false,
+                            "canExecute": false,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "mitre_mitigations": {
+                            "@type": "ModulePermission",
+                            "module": "mitre_mitigations",
+                            "canRead": false,
+                            "canCreate": false,
+                            "canDelete": false,
+                            "canUpdate": false,
+                            "canExecute": false,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "threat_intel_feeds": {
+                            "@type": "ModulePermission",
+                            "module": "threat_intel_feeds",
+                            "canRead": true,
+                            "canCreate": true,
+                            "canDelete": true,
+                            "canUpdate": true,
+                            "canExecute": true,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "preprocessing_rules": {
+                            "@type": "ModulePermission",
+                            "module": "preprocessing_rules",
+                            "canRead": false,
+                            "canCreate": false,
+                            "canDelete": false,
+                            "canUpdate": false,
+                            "canExecute": false,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "mitre_sub_techniques": {
+                            "@type": "ModulePermission",
+                            "module": "mitre_sub_techniques",
+                            "canRead": false,
+                            "canCreate": false,
+                            "canDelete": false,
+                            "canUpdate": false,
+                            "canExecute": false,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "threat_intel_reports": {
+                            "@type": "ModulePermission",
+                            "module": "threat_intel_reports",
                             "canRead": true,
                             "canCreate": true,
                             "canDelete": true,
@@ -490,11 +658,11 @@
                     "_allChecked": true,
                     "description": "Essentially the root user, use carefully",
                     "modulePermissions": {
-                        "hunt": true,
                         "keys": true,
                         "files": true,
                         "rules": true,
                         "tasks": true,
+                        "users": true,
                         "agents": true,
                         "alerts": true,
                         "assets": true,
@@ -505,6 +673,7 @@
                         "tenants": true,
                         "widgets": true,
                         "comments": true,
+                        "scenario": true,
                         "security": true,
                         "warrooms": true,
                         "approvals": true,
@@ -521,35 +690,37 @@
                         "contentHub": true,
                         "fsr_queues": true,
                         "indicators": true,
+                        "workspaces": true,
                         "application": true,
                         "attachments": true,
+                        "mitre_groups": true,
                         "sla_template": true,
                         "announcements": true,
                         "communication": true,
                         "data_archival": true,
+                        "mitre_tactics": true,
+                        "ooredoo_asset": true,
                         "saved_reports": true,
                         "solutionpacks": true,
+                        "mitre_software": true,
+                        "ooredoo_roster": true,
                         "email_templates": true,
-                        "leave_schedules": true
+                        "leave_schedules": true,
+                        "mitre_techniques": true,
+                        "change_management": true,
+                        "mitre_mitigations": true,
+                        "threat_intel_feeds": true,
+                        "preprocessing_rules": true,
+                        "mitre_sub_techniques": true,
+                        "threat_intel_reports": true
                     },
                     "modulePermissionDetails": {
-                        "hunt": {
-                            "@type": "ModulePermission",
-                            "module": "hunt",
-                            "canRead": true,
-                            "canCreate": true,
-                            "canDelete": true,
-                            "canUpdate": true,
-                            "canExecute": true,
-                            "fieldPermissions": [],
-                            "_fieldPermissionChanged": false
-                        },
                         "keys": {
                             "@type": "ModulePermission",
                             "module": "keys",
                             "canRead": true,
                             "canCreate": true,
-                            "canDelete": true,
+                            "canDelete": false,
                             "canUpdate": true,
                             "canExecute": true,
                             "fieldPermissions": [],
@@ -585,6 +756,17 @@
                             "canDelete": true,
                             "canUpdate": true,
                             "canExecute": false,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "users": {
+                            "@type": "ModulePermission",
+                            "module": "users",
+                            "canRead": true,
+                            "canCreate": true,
+                            "canDelete": true,
+                            "canUpdate": true,
+                            "canExecute": true,
                             "fieldPermissions": [],
                             "_fieldPermissionChanged": false
                         },
@@ -695,6 +877,17 @@
                             "canDelete": true,
                             "canUpdate": true,
                             "canExecute": false,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "scenario": {
+                            "@type": "ModulePermission",
+                            "module": "scenario",
+                            "canRead": true,
+                            "canCreate": true,
+                            "canDelete": true,
+                            "canUpdate": true,
+                            "canExecute": true,
                             "fieldPermissions": [],
                             "_fieldPermissionChanged": false
                         },
@@ -874,6 +1067,17 @@
                             "fieldPermissions": [],
                             "_fieldPermissionChanged": false
                         },
+                        "workspaces": {
+                            "@type": "ModulePermission",
+                            "module": "workspaces",
+                            "canRead": true,
+                            "canCreate": true,
+                            "canDelete": true,
+                            "canUpdate": true,
+                            "canExecute": true,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
                         "application": {
                             "@type": "ModulePermission",
                             "module": "application",
@@ -896,14 +1100,25 @@
                             "fieldPermissions": [],
                             "_fieldPermissionChanged": false
                         },
-                        "sla_template": {
+                        "mitre_groups": {
                             "@type": "ModulePermission",
-                            "module": "sla_template",
+                            "module": "mitre_groups",
                             "canRead": true,
                             "canCreate": true,
                             "canDelete": true,
                             "canUpdate": true,
                             "canExecute": true,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "sla_template": {
+                            "@type": "ModulePermission",
+                            "module": "sla_template",
+                            "canRead": false,
+                            "canCreate": false,
+                            "canDelete": false,
+                            "canUpdate": false,
+                            "canExecute": false,
                             "fieldPermissions": [],
                             "_fieldPermissionChanged": false
                         },
@@ -940,6 +1155,28 @@
                             "fieldPermissions": [],
                             "_fieldPermissionChanged": false
                         },
+                        "mitre_tactics": {
+                            "@type": "ModulePermission",
+                            "module": "mitre_tactics",
+                            "canRead": true,
+                            "canCreate": true,
+                            "canDelete": true,
+                            "canUpdate": true,
+                            "canExecute": true,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "ooredoo_asset": {
+                            "@type": "ModulePermission",
+                            "module": "ooredoo_asset",
+                            "canRead": true,
+                            "canCreate": true,
+                            "canDelete": true,
+                            "canUpdate": true,
+                            "canExecute": true,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
                         "saved_reports": {
                             "@type": "ModulePermission",
                             "module": "saved_reports",
@@ -954,6 +1191,28 @@
                         "solutionpacks": {
                             "@type": "ModulePermission",
                             "module": "solutionpacks",
+                            "canRead": true,
+                            "canCreate": true,
+                            "canDelete": true,
+                            "canUpdate": true,
+                            "canExecute": true,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "mitre_software": {
+                            "@type": "ModulePermission",
+                            "module": "mitre_software",
+                            "canRead": true,
+                            "canCreate": true,
+                            "canDelete": true,
+                            "canUpdate": true,
+                            "canExecute": true,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "ooredoo_roster": {
+                            "@type": "ModulePermission",
+                            "module": "ooredoo_roster",
                             "canRead": true,
                             "canCreate": true,
                             "canDelete": true,
@@ -983,6 +1242,83 @@
                             "canExecute": false,
                             "fieldPermissions": [],
                             "_fieldPermissionChanged": false
+                        },
+                        "mitre_techniques": {
+                            "@type": "ModulePermission",
+                            "module": "mitre_techniques",
+                            "canRead": true,
+                            "canCreate": true,
+                            "canDelete": true,
+                            "canUpdate": true,
+                            "canExecute": true,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "change_management": {
+                            "@type": "ModulePermission",
+                            "module": "change_management",
+                            "canRead": true,
+                            "canCreate": true,
+                            "canDelete": false,
+                            "canUpdate": true,
+                            "canExecute": true,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "mitre_mitigations": {
+                            "@type": "ModulePermission",
+                            "module": "mitre_mitigations",
+                            "canRead": true,
+                            "canCreate": true,
+                            "canDelete": true,
+                            "canUpdate": true,
+                            "canExecute": true,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "threat_intel_feeds": {
+                            "@type": "ModulePermission",
+                            "module": "threat_intel_feeds",
+                            "canRead": true,
+                            "canCreate": true,
+                            "canDelete": true,
+                            "canUpdate": true,
+                            "canExecute": false,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "preprocessing_rules": {
+                            "@type": "ModulePermission",
+                            "module": "preprocessing_rules",
+                            "canRead": true,
+                            "canCreate": true,
+                            "canDelete": true,
+                            "canUpdate": true,
+                            "canExecute": false,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "mitre_sub_techniques": {
+                            "@type": "ModulePermission",
+                            "module": "mitre_sub_techniques",
+                            "canRead": true,
+                            "canCreate": true,
+                            "canDelete": true,
+                            "canUpdate": true,
+                            "canExecute": true,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "threat_intel_reports": {
+                            "@type": "ModulePermission",
+                            "module": "threat_intel_reports",
+                            "canRead": true,
+                            "canCreate": true,
+                            "canDelete": true,
+                            "canUpdate": true,
+                            "canExecute": true,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
                         }
                     }
                 },
@@ -993,7 +1329,7 @@
                     "_allChecked": true,
                     "description": "Responsible for Alert Triaging, false-positive filtering, and escalating potentially malicious alerts to Incidents.",
                     "modulePermissions": {
-                        "hunt": true,
+                        "keys": true,
                         "files": true,
                         "rules": true,
                         "tasks": true,
@@ -1007,6 +1343,7 @@
                         "tenants": true,
                         "widgets": true,
                         "comments": true,
+                        "scenario": true,
                         "security": true,
                         "warrooms": true,
                         "approvals": true,
@@ -1023,24 +1360,37 @@
                         "contentHub": true,
                         "fsr_queues": true,
                         "indicators": true,
+                        "workspaces": true,
                         "application": true,
                         "attachments": true,
+                        "mitre_groups": true,
                         "sla_template": true,
                         "announcements": true,
                         "communication": true,
                         "data_archival": true,
+                        "mitre_tactics": true,
+                        "ooredoo_asset": true,
                         "saved_reports": true,
                         "solutionpacks": true,
-                        "email_templates": true
+                        "mitre_software": true,
+                        "ooredoo_roster": true,
+                        "email_templates": true,
+                        "leave_schedules": true,
+                        "mitre_techniques": true,
+                        "mitre_mitigations": true,
+                        "threat_intel_feeds": true,
+                        "preprocessing_rules": true,
+                        "mitre_sub_techniques": true,
+                        "threat_intel_reports": true
                     },
                     "modulePermissionDetails": {
-                        "hunt": {
+                        "keys": {
                             "@type": "ModulePermission",
-                            "module": "hunt",
-                            "canRead": true,
-                            "canCreate": true,
+                            "module": "keys",
+                            "canRead": false,
+                            "canCreate": false,
                             "canDelete": false,
-                            "canUpdate": true,
+                            "canUpdate": false,
                             "canExecute": false,
                             "fieldPermissions": [],
                             "_fieldPermissionChanged": false
@@ -1097,7 +1447,976 @@
                             "canDelete": false,
                             "canUpdate": true,
                             "canExecute": false,
-                            "fieldPermissions": [],
+                            "fieldPermissions": [
+                                {
+                                    "@id": "/api/3/field_permissions/34087d33-3c53-4419-b208-e6277e299a35",
+                                    "uuid": "34087d33-3c53-4419-b208-e6277e299a35",
+                                    "@type": "FieldPermission",
+                                    "field": "ackDate",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/1a312fb9-6400-46e3-ac58-5711acfa6061",
+                                    "uuid": "1a312fb9-6400-46e3-ac58-5711acfa6061",
+                                    "@type": "FieldPermission",
+                                    "field": "ackSLApausedon",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/5d0645b4-e0d7-4f0b-8339-bea38102b1d5",
+                                    "uuid": "5d0645b4-e0d7-4f0b-8339-bea38102b1d5",
+                                    "@type": "FieldPermission",
+                                    "field": "ackSlaStatus",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/28f3c66f-7d14-4a2b-878b-16da57259021",
+                                    "uuid": "28f3c66f-7d14-4a2b-878b-16da57259021",
+                                    "@type": "FieldPermission",
+                                    "field": "alertDetectionDate",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/9ae8b932-0045-48be-93f6-8480750e9296",
+                                    "uuid": "9ae8b932-0045-48be-93f6-8480750e9296",
+                                    "@type": "FieldPermission",
+                                    "field": "alertRemainingAckSLA",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/096ad21b-d37c-42de-98d4-e46ae5570569",
+                                    "uuid": "096ad21b-d37c-42de-98d4-e46ae5570569",
+                                    "@type": "FieldPermission",
+                                    "field": "alertRemainingRespSLA",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/6011f441-c92d-4ba6-b9fe-5ef0f4f568ab",
+                                    "uuid": "6011f441-c92d-4ba6-b9fe-5ef0f4f568ab",
+                                    "@type": "FieldPermission",
+                                    "field": "alerts",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/e3938e17-765b-46ee-b445-dce526a3edd5",
+                                    "uuid": "e3938e17-765b-46ee-b445-dce526a3edd5",
+                                    "@type": "FieldPermission",
+                                    "field": "assets",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/f3a2364a-2d17-4728-a93c-39661189b9f2",
+                                    "uuid": "f3a2364a-2d17-4728-a93c-39661189b9f2",
+                                    "@type": "FieldPermission",
+                                    "field": "assignedTo",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/f6fd3d9a-26fc-44d4-b544-e737d99a90dd",
+                                    "uuid": "f6fd3d9a-26fc-44d4-b544-e737d99a90dd",
+                                    "@type": "FieldPermission",
+                                    "field": "assigneddate",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/e2d121c0-fa89-43d8-a6b2-ca92c37d3a35",
+                                    "uuid": "e2d121c0-fa89-43d8-a6b2-ca92c37d3a35",
+                                    "@type": "FieldPermission",
+                                    "field": "attachmentNames",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/a5c22298-b8dd-47ea-8775-a8615e46f9fc",
+                                    "uuid": "a5c22298-b8dd-47ea-8775-a8615e46f9fc",
+                                    "@type": "FieldPermission",
+                                    "field": "attachments",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/b74f07b2-7fce-45b4-b446-771199c85d00",
+                                    "uuid": "b74f07b2-7fce-45b4-b446-771199c85d00",
+                                    "@type": "FieldPermission",
+                                    "field": "bucketName",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/e3a9d890-965c-4ede-9e70-fbd549828aae",
+                                    "uuid": "e3a9d890-965c-4ede-9e70-fbd549828aae",
+                                    "@type": "FieldPermission",
+                                    "field": "bytesTransferred",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/7e9b49fd-2bc4-4f76-8203-2e4b1fdcfc86",
+                                    "uuid": "7e9b49fd-2bc4-4f76-8203-2e4b1fdcfc86",
+                                    "@type": "FieldPermission",
+                                    "field": "campaigns",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/57b14421-e678-4b21-b7f5-70f3ee151217",
+                                    "uuid": "57b14421-e678-4b21-b7f5-70f3ee151217",
+                                    "@type": "FieldPermission",
+                                    "field": "closureNotes",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/16bf8c8a-1547-46a4-bcb5-a4d5db6e252a",
+                                    "uuid": "16bf8c8a-1547-46a4-bcb5-a4d5db6e252a",
+                                    "@type": "FieldPermission",
+                                    "field": "closureReason",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/925530e2-4216-4019-9ccb-9a2a8fe21f96",
+                                    "uuid": "925530e2-4216-4019-9ccb-9a2a8fe21f96",
+                                    "@type": "FieldPermission",
+                                    "field": "commandLine",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/7ef99fc4-f165-499f-9ddc-9bd720269423",
+                                    "uuid": "7ef99fc4-f165-499f-9ddc-9bd720269423",
+                                    "@type": "FieldPermission",
+                                    "field": "comments",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/e4110b40-fd9b-4aea-9708-01ef570d379d",
+                                    "uuid": "e4110b40-fd9b-4aea-9708-01ef570d379d",
+                                    "@type": "FieldPermission",
+                                    "field": "communications",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/8f089537-a330-4379-ac05-0f8dafd2332d",
+                                    "uuid": "8f089537-a330-4379-ac05-0f8dafd2332d",
+                                    "@type": "FieldPermission",
+                                    "field": "companies",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/12a9cda0-8247-4df6-9d8a-0d6cb3ec97e9",
+                                    "uuid": "12a9cda0-8247-4df6-9d8a-0d6cb3ec97e9",
+                                    "@type": "FieldPermission",
+                                    "field": "computerName",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/11c58e61-ff0a-41c5-b0ea-ee7983f2f4c1",
+                                    "uuid": "11c58e61-ff0a-41c5-b0ea-ee7983f2f4c1",
+                                    "@type": "FieldPermission",
+                                    "field": "conflict",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/f9eb74a0-b928-47bc-b0f3-0e6f5282532c",
+                                    "uuid": "f9eb74a0-b928-47bc-b0f3-0e6f5282532c",
+                                    "@type": "FieldPermission",
+                                    "field": "createDate",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/5f15dda6-cbf6-4554-b33c-454e9d5d2a1e",
+                                    "uuid": "5f15dda6-cbf6-4554-b33c-454e9d5d2a1e",
+                                    "@type": "FieldPermission",
+                                    "field": "createUser",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/51489181-6da2-4fcc-8da7-3280ab1ce47a",
+                                    "uuid": "51489181-6da2-4fcc-8da7-3280ab1ce47a",
+                                    "@type": "FieldPermission",
+                                    "field": "decodedCommandLine",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/5aec7df8-ab2f-4a56-8629-a549af6cb302",
+                                    "uuid": "5aec7df8-ab2f-4a56-8629-a549af6cb302",
+                                    "@type": "FieldPermission",
+                                    "field": "description",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/5f50cae8-307e-429e-b2e2-7b9de04c94bc",
+                                    "uuid": "5f50cae8-307e-429e-b2e2-7b9de04c94bc",
+                                    "@type": "FieldPermission",
+                                    "field": "destinationID",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/a9585afa-f2ba-44fd-a500-94a4592392cb",
+                                    "uuid": "a9585afa-f2ba-44fd-a500-94a4592392cb",
+                                    "@type": "FieldPermission",
+                                    "field": "destinationIp",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/f9ef0c0b-4dfe-4c15-96ec-bd271cbbe53b",
+                                    "uuid": "f9ef0c0b-4dfe-4c15-96ec-bd271cbbe53b",
+                                    "@type": "FieldPermission",
+                                    "field": "destinationPort",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/411ba3f7-8146-4148-97f7-ff70b039e6b6",
+                                    "uuid": "411ba3f7-8146-4148-97f7-ff70b039e6b6",
+                                    "@type": "FieldPermission",
+                                    "field": "deviceOwner",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/acff46dc-4e50-4fd7-94bc-6ac9222e187d",
+                                    "uuid": "acff46dc-4e50-4fd7-94bc-6ac9222e187d",
+                                    "@type": "FieldPermission",
+                                    "field": "deviceSerialNo",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/652f3a34-1aa0-4d64-8451-f916837e1b1c",
+                                    "uuid": "652f3a34-1aa0-4d64-8451-f916837e1b1c",
+                                    "@type": "FieldPermission",
+                                    "field": "deviceType",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/8363b954-af5b-4318-9c8a-9cf3e9b2b5b3",
+                                    "uuid": "8363b954-af5b-4318-9c8a-9cf3e9b2b5b3",
+                                    "@type": "FieldPermission",
+                                    "field": "deviceUID",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/4c154e6b-8e20-482c-a634-72bf064768ad",
+                                    "uuid": "4c154e6b-8e20-482c-a634-72bf064768ad",
+                                    "@type": "FieldPermission",
+                                    "field": "domain",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/bf7131ae-40f2-4aea-874b-bbbb1161cab8",
+                                    "uuid": "bf7131ae-40f2-4aea-874b-bbbb1161cab8",
+                                    "@type": "FieldPermission",
+                                    "field": "dueBy",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/0b406337-dc14-4b44-8732-d680517ecb77",
+                                    "uuid": "0b406337-dc14-4b44-8732-d680517ecb77",
+                                    "@type": "FieldPermission",
+                                    "field": "emailBody",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/2cd36878-3382-41ce-b717-0b85bdb72d3e",
+                                    "uuid": "2cd36878-3382-41ce-b717-0b85bdb72d3e",
+                                    "@type": "FieldPermission",
+                                    "field": "emailClassification",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/3774a8cc-43d3-4ed8-89c0-3629a499d4dd",
+                                    "uuid": "3774a8cc-43d3-4ed8-89c0-3629a499d4dd",
+                                    "@type": "FieldPermission",
+                                    "field": "emailFrom",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/9a6f5d19-4279-4309-92d5-ed44258bf4fe",
+                                    "uuid": "9a6f5d19-4279-4309-92d5-ed44258bf4fe",
+                                    "@type": "FieldPermission",
+                                    "field": "emailHeaders",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/2a436bfc-7c31-4a95-9a72-a88f3eafffd8",
+                                    "uuid": "2a436bfc-7c31-4a95-9a72-a88f3eafffd8",
+                                    "@type": "FieldPermission",
+                                    "field": "emailSubject",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/c46f8fc3-4d82-4c56-8583-55338080f49a",
+                                    "uuid": "c46f8fc3-4d82-4c56-8583-55338080f49a",
+                                    "@type": "FieldPermission",
+                                    "field": "emailTo",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/a6e68734-ab00-431f-94be-4c663490cbd5",
+                                    "uuid": "a6e68734-ab00-431f-94be-4c663490cbd5",
+                                    "@type": "FieldPermission",
+                                    "field": "epochTime",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/7b514565-6f18-4b96-bca3-7f8189181da8",
+                                    "uuid": "7b514565-6f18-4b96-bca3-7f8189181da8",
+                                    "@type": "FieldPermission",
+                                    "field": "escalatedtoincident",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/eaceed68-88d1-441a-be9b-e50bce6d00ff",
+                                    "uuid": "eaceed68-88d1-441a-be9b-e50bce6d00ff",
+                                    "@type": "FieldPermission",
+                                    "field": "escalationReason",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/93d5f67c-41f2-4fcf-a795-62d205ca7a39",
+                                    "uuid": "93d5f67c-41f2-4fcf-a795-62d205ca7a39",
+                                    "@type": "FieldPermission",
+                                    "field": "eventTime",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/8d720acf-4245-41f2-b5d6-d9eb4ba09e86",
+                                    "uuid": "8d720acf-4245-41f2-b5d6-d9eb4ba09e86",
+                                    "@type": "FieldPermission",
+                                    "field": "events",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/31bf49e7-d974-433d-84b3-fb4562d19854",
+                                    "uuid": "31bf49e7-d974-433d-84b3-fb4562d19854",
+                                    "@type": "FieldPermission",
+                                    "field": "fileEmail",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/b6d927de-3ffb-4eed-b073-5dcaa0a11c1d",
+                                    "uuid": "b6d927de-3ffb-4eed-b073-5dcaa0a11c1d",
+                                    "@type": "FieldPermission",
+                                    "field": "fileHash",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/9b579ef2-8790-4608-a86b-07070f7241a3",
+                                    "uuid": "9b579ef2-8790-4608-a86b-07070f7241a3",
+                                    "@type": "FieldPermission",
+                                    "field": "fileHashes",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/ca283f54-4274-4825-887e-84bdea85e8fc",
+                                    "uuid": "ca283f54-4274-4825-887e-84bdea85e8fc",
+                                    "@type": "FieldPermission",
+                                    "field": "fileName",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/956a4312-d3dc-48da-accb-c53629e0c374",
+                                    "uuid": "956a4312-d3dc-48da-accb-c53629e0c374",
+                                    "@type": "FieldPermission",
+                                    "field": "fileNames",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/9b765bef-196e-4bb1-8575-4fd9edb6e1f5",
+                                    "uuid": "9b765bef-196e-4bb1-8575-4fd9edb6e1f5",
+                                    "@type": "FieldPermission",
+                                    "field": "filePath",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/931da411-0a74-4b19-bbc4-60506c7fd287",
+                                    "uuid": "931da411-0a74-4b19-bbc4-60506c7fd287",
+                                    "@type": "FieldPermission",
+                                    "field": "fsrQueue",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/1a50da62-82f1-47f0-b959-5515f251bb3f",
+                                    "uuid": "1a50da62-82f1-47f0-b959-5515f251bb3f",
+                                    "@type": "FieldPermission",
+                                    "field": "iPAddresses",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/41404226-ea88-44b3-9111-3d0b43f0bd8b",
+                                    "uuid": "41404226-ea88-44b3-9111-3d0b43f0bd8b",
+                                    "@type": "FieldPermission",
+                                    "field": "incidents",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/84520283-1a96-43f0-9839-88c8090e227d",
+                                    "uuid": "84520283-1a96-43f0-9839-88c8090e227d",
+                                    "@type": "FieldPermission",
+                                    "field": "indicators",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/94645249-7b94-4cc1-8c0b-0ee8d37ce76b",
+                                    "uuid": "94645249-7b94-4cc1-8c0b-0ee8d37ce76b",
+                                    "@type": "FieldPermission",
+                                    "field": "killChainPhase",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/8186ea14-5d3b-48fe-8ed4-bb53df38c88e",
+                                    "uuid": "8186ea14-5d3b-48fe-8ed4-bb53df38c88e",
+                                    "@type": "FieldPermission",
+                                    "field": "latestLogin",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/62c3a8a2-87ac-4022-882d-4ef94a928209",
+                                    "uuid": "62c3a8a2-87ac-4022-882d-4ef94a928209",
+                                    "@type": "FieldPermission",
+                                    "field": "metrics",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/96c929f2-2aa6-4b9e-b81a-c08f05cbdcc2",
+                                    "uuid": "96c929f2-2aa6-4b9e-b81a-c08f05cbdcc2",
+                                    "@type": "FieldPermission",
+                                    "field": "mitreTechnique",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/41cabc3c-f1b8-4af2-be64-322e2a52277e",
+                                    "uuid": "41cabc3c-f1b8-4af2-be64-322e2a52277e",
+                                    "@type": "FieldPermission",
+                                    "field": "mitre_sub_techniques",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/c5332773-ebe9-403a-8694-34f5e666a250",
+                                    "uuid": "c5332773-ebe9-403a-8694-34f5e666a250",
+                                    "@type": "FieldPermission",
+                                    "field": "mitre_techniques",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/1809bc2a-c29c-443c-ad54-21250fa0a33e",
+                                    "uuid": "1809bc2a-c29c-443c-ad54-21250fa0a33e",
+                                    "@type": "FieldPermission",
+                                    "field": "mitreattackid",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/19561a5c-4af4-40cf-902a-b1222f1b5091",
+                                    "uuid": "19561a5c-4af4-40cf-902a-b1222f1b5091",
+                                    "@type": "FieldPermission",
+                                    "field": "mitregroups",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/73e7a30a-6a98-4718-88c1-d72bc8b067be",
+                                    "uuid": "73e7a30a-6a98-4718-88c1-d72bc8b067be",
+                                    "@type": "FieldPermission",
+                                    "field": "mitremitigations",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/ca4e5fce-59af-4332-9fde-4b76904b54cc",
+                                    "uuid": "ca4e5fce-59af-4332-9fde-4b76904b54cc",
+                                    "@type": "FieldPermission",
+                                    "field": "mitresoftware",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/aa8e30a2-3f28-4689-95d3-60da8de6ba7f",
+                                    "uuid": "aa8e30a2-3f28-4689-95d3-60da8de6ba7f",
+                                    "@type": "FieldPermission",
+                                    "field": "mitretactics",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/3c3e3199-aa72-4f54-bd40-fb616a0888ab",
+                                    "uuid": "3c3e3199-aa72-4f54-bd40-fb616a0888ab",
+                                    "@type": "FieldPermission",
+                                    "field": "modifyDate",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/9c4660a3-9b6d-451c-a980-ac357ab0ada9",
+                                    "uuid": "9c4660a3-9b6d-451c-a980-ac357ab0ada9",
+                                    "@type": "FieldPermission",
+                                    "field": "modifyUser",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/bbb8807e-abda-4e93-ae56-94219537ab34",
+                                    "uuid": "bbb8807e-abda-4e93-ae56-94219537ab34",
+                                    "@type": "FieldPermission",
+                                    "field": "name",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/0535e1c7-c42e-4917-adcd-cfb2384cf4d1",
+                                    "uuid": "0535e1c7-c42e-4917-adcd-cfb2384cf4d1",
+                                    "@type": "FieldPermission",
+                                    "field": "parentProcessCmdLine",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/71a8eb9e-e502-4d32-b87b-a775cd5961b2",
+                                    "uuid": "71a8eb9e-e502-4d32-b87b-a775cd5961b2",
+                                    "@type": "FieldPermission",
+                                    "field": "parentProcessName",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/72176ad7-8bb2-4b80-bb3a-5f37471314d1",
+                                    "uuid": "72176ad7-8bb2-4b80-bb3a-5f37471314d1",
+                                    "@type": "FieldPermission",
+                                    "field": "parentProcessPid",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/f7b2d4f6-b2e1-4584-a1ad-074136a88ef4",
+                                    "uuid": "f7b2d4f6-b2e1-4584-a1ad-074136a88ef4",
+                                    "@type": "FieldPermission",
+                                    "field": "persons",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/038ce5cf-e230-4c49-a40f-1e7f4ddda0a8",
+                                    "uuid": "038ce5cf-e230-4c49-a40f-1e7f4ddda0a8",
+                                    "@type": "FieldPermission",
+                                    "field": "priorityWeight",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/558e27bb-c148-44dd-9afe-890bfba3c0c2",
+                                    "uuid": "558e27bb-c148-44dd-9afe-890bfba3c0c2",
+                                    "@type": "FieldPermission",
+                                    "field": "processGuid",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/db3868a3-9f68-4791-971d-b56cedab5b6a",
+                                    "uuid": "db3868a3-9f68-4791-971d-b56cedab5b6a",
+                                    "@type": "FieldPermission",
+                                    "field": "processId",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/df6b98f0-c56c-461c-ab5d-b79bf8dead83",
+                                    "uuid": "df6b98f0-c56c-461c-ab5d-b79bf8dead83",
+                                    "@type": "FieldPermission",
+                                    "field": "processName",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/de86f077-b84d-41fc-a39e-659aa4aa6889",
+                                    "uuid": "de86f077-b84d-41fc-a39e-659aa4aa6889",
+                                    "@type": "FieldPermission",
+                                    "field": "processTree",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/39028fc7-939d-410f-a082-1a31d6e1a7f6",
+                                    "uuid": "39028fc7-939d-410f-a082-1a31d6e1a7f6",
+                                    "@type": "FieldPermission",
+                                    "field": "recipientEmailAddress",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/620d0251-04ac-42d0-ab67-b7df28a863a5",
+                                    "uuid": "620d0251-04ac-42d0-ab67-b7df28a863a5",
+                                    "@type": "FieldPermission",
+                                    "field": "recordTags",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/8aa6af55-2f6d-442e-862c-562478709c33",
+                                    "uuid": "8aa6af55-2f6d-442e-862c-562478709c33",
+                                    "@type": "FieldPermission",
+                                    "field": "registryKey",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/89474e40-ab8c-47ad-9709-6202caaec473",
+                                    "uuid": "89474e40-ab8c-47ad-9709-6202caaec473",
+                                    "@type": "FieldPermission",
+                                    "field": "registryKeyValue",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/c6404471-fd33-4afc-a25f-37a104c262b8",
+                                    "uuid": "c6404471-fd33-4afc-a25f-37a104c262b8",
+                                    "@type": "FieldPermission",
+                                    "field": "reporter",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/097209e1-c8fb-4f11-b6e0-9930c11d28e0",
+                                    "uuid": "097209e1-c8fb-4f11-b6e0-9930c11d28e0",
+                                    "@type": "FieldPermission",
+                                    "field": "reporterEmailBody",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/e610ff6f-93e9-41bd-93d8-4dc2070cd807",
+                                    "uuid": "e610ff6f-93e9-41bd-93d8-4dc2070cd807",
+                                    "@type": "FieldPermission",
+                                    "field": "resolvedAutomatedly",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/67d831dc-79eb-4dcb-af35-bebfc06615a6",
+                                    "uuid": "67d831dc-79eb-4dcb-af35-bebfc06615a6",
+                                    "@type": "FieldPermission",
+                                    "field": "resolveddate",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/bf603d11-f673-46f4-b74d-c55497c36c06",
+                                    "uuid": "bf603d11-f673-46f4-b74d-c55497c36c06",
+                                    "@type": "FieldPermission",
+                                    "field": "respDate",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/a4c37488-a517-42bd-9146-4c448bc18deb",
+                                    "uuid": "a4c37488-a517-42bd-9146-4c448bc18deb",
+                                    "@type": "FieldPermission",
+                                    "field": "respDueDate",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/67c845d6-f675-418f-8a35-e1026f7b279b",
+                                    "uuid": "67c845d6-f675-418f-8a35-e1026f7b279b",
+                                    "@type": "FieldPermission",
+                                    "field": "respSLApausedon",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/bf754022-6566-48b5-990e-ee3e7462b8f1",
+                                    "uuid": "bf754022-6566-48b5-990e-ee3e7462b8f1",
+                                    "@type": "FieldPermission",
+                                    "field": "respSlaStatus",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/2b577f91-929d-46c8-abeb-8ec17cfe1179",
+                                    "uuid": "2b577f91-929d-46c8-abeb-8ec17cfe1179",
+                                    "@type": "FieldPermission",
+                                    "field": "returnPath",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/8011e1c5-b864-4245-a8f9-be131db8991a",
+                                    "uuid": "8011e1c5-b864-4245-a8f9-be131db8991a",
+                                    "@type": "FieldPermission",
+                                    "field": "rule",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/fbccba7c-9261-4868-9c0b-d1d82b3f16ad",
+                                    "uuid": "fbccba7c-9261-4868-9c0b-d1d82b3f16ad",
+                                    "@type": "FieldPermission",
+                                    "field": "scheduledTask",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/be52797f-d2f9-4f3b-991b-235187527bdd",
+                                    "uuid": "be52797f-d2f9-4f3b-991b-235187527bdd",
+                                    "@type": "FieldPermission",
+                                    "field": "senderDomain",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/e906b3dc-93ad-4ff0-8bdf-4708a5fd4a3a",
+                                    "uuid": "e906b3dc-93ad-4ff0-8bdf-4708a5fd4a3a",
+                                    "@type": "FieldPermission",
+                                    "field": "senderEmailAddress",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/7d62d00f-f2ff-4b5c-bf6e-9f32e053fa95",
+                                    "uuid": "7d62d00f-f2ff-4b5c-bf6e-9f32e053fa95",
+                                    "@type": "FieldPermission",
+                                    "field": "services",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/620fca24-f7b4-4fdb-9b9c-d03ccbd5c3fb",
+                                    "uuid": "620fca24-f7b4-4fdb-9b9c-d03ccbd5c3fb",
+                                    "@type": "FieldPermission",
+                                    "field": "severity",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/8c80aedd-f9ca-48ce-821b-e225b8f27a3f",
+                                    "uuid": "8c80aedd-f9ca-48ce-821b-e225b8f27a3f",
+                                    "@type": "FieldPermission",
+                                    "field": "source",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/e5176ea2-491f-4228-a921-5e800f3a1939",
+                                    "uuid": "e5176ea2-491f-4228-a921-5e800f3a1939",
+                                    "@type": "FieldPermission",
+                                    "field": "sourceId",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/4b28f322-97b5-49b1-b9b5-0d589f64099e",
+                                    "uuid": "4b28f322-97b5-49b1-b9b5-0d589f64099e",
+                                    "@type": "FieldPermission",
+                                    "field": "sourceIp",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/dc2fa8eb-6560-4f46-b111-eb2236cb2a0a",
+                                    "uuid": "dc2fa8eb-6560-4f46-b111-eb2236cb2a0a",
+                                    "@type": "FieldPermission",
+                                    "field": "sourcePort",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/3ce7bbd3-3309-43d3-af4f-a1a4ccd2fdf0",
+                                    "uuid": "3ce7bbd3-3309-43d3-af4f-a1a4ccd2fdf0",
+                                    "@type": "FieldPermission",
+                                    "field": "sourceProcess",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/0d5f6ded-7f58-4482-b7a8-1d82967d1875",
+                                    "uuid": "0d5f6ded-7f58-4482-b7a8-1d82967d1875",
+                                    "@type": "FieldPermission",
+                                    "field": "sourceTool",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/ce33c281-66b2-4e6e-9a04-9deaf8e993f9",
+                                    "uuid": "ce33c281-66b2-4e6e-9a04-9deaf8e993f9",
+                                    "@type": "FieldPermission",
+                                    "field": "sourceType",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/f51de780-3d63-4cbf-abbe-a99b0f487726",
+                                    "uuid": "f51de780-3d63-4cbf-abbe-a99b0f487726",
+                                    "@type": "FieldPermission",
+                                    "field": "sourcedata",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/dda92512-2840-489e-89c1-fcd0091b9e8c",
+                                    "uuid": "dda92512-2840-489e-89c1-fcd0091b9e8c",
+                                    "@type": "FieldPermission",
+                                    "field": "state",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/6232a383-b543-4f69-a8e8-cdcc7382bb8c",
+                                    "uuid": "6232a383-b543-4f69-a8e8-cdcc7382bb8c",
+                                    "@type": "FieldPermission",
+                                    "field": "status",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/40e43674-67a3-4a1f-90c6-f53bcba4ef8a",
+                                    "uuid": "40e43674-67a3-4a1f-90c6-f53bcba4ef8a",
+                                    "@type": "FieldPermission",
+                                    "field": "targetAsset",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/b36c119f-9478-4b3e-8bd6-0733108593f6",
+                                    "uuid": "b36c119f-9478-4b3e-8bd6-0733108593f6",
+                                    "@type": "FieldPermission",
+                                    "field": "targetProcess",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/9250701d-3b27-416e-aead-057c0f2954c6",
+                                    "uuid": "9250701d-3b27-416e-aead-057c0f2954c6",
+                                    "@type": "FieldPermission",
+                                    "field": "tasks",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/761da259-409d-4c7d-88f1-f6be9c478110",
+                                    "uuid": "761da259-409d-4c7d-88f1-f6be9c478110",
+                                    "@type": "FieldPermission",
+                                    "field": "tenant",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/66b0768c-0562-458b-a81a-d7a9cd009e68",
+                                    "uuid": "66b0768c-0562-458b-a81a-d7a9cd009e68",
+                                    "@type": "FieldPermission",
+                                    "field": "tenantRecordId",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/c416e9c3-9ac6-4230-ab87-327329167081",
+                                    "uuid": "c416e9c3-9ac6-4230-ab87-327329167081",
+                                    "@type": "FieldPermission",
+                                    "field": "ticketID",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/9e4f868c-2e6b-46ee-9a33-ecb0a8c54c21",
+                                    "uuid": "9e4f868c-2e6b-46ee-9a33-ecb0a8c54c21",
+                                    "@type": "FieldPermission",
+                                    "field": "type",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/71a57de4-97a4-4c78-af8d-b5145997c418",
+                                    "uuid": "71a57de4-97a4-4c78-af8d-b5145997c418",
+                                    "@type": "FieldPermission",
+                                    "field": "url",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/7802b9c4-ec0c-420b-8404-b7905dc6c21d",
+                                    "uuid": "7802b9c4-ec0c-420b-8404-b7905dc6c21d",
+                                    "@type": "FieldPermission",
+                                    "field": "userDetails",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/6a92ccb5-02c6-4dae-8d6b-284a678e2558",
+                                    "uuid": "6a92ccb5-02c6-4dae-8d6b-284a678e2558",
+                                    "@type": "FieldPermission",
+                                    "field": "userName",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/6b030388-af51-4631-8a22-a15630113fee",
+                                    "uuid": "6b030388-af51-4631-8a22-a15630113fee",
+                                    "@type": "FieldPermission",
+                                    "field": "vulnerabilitySeverity",
+                                    "canRead": true,
+                                    "canWrite": true
+                                },
+                                {
+                                    "@id": "/api/3/field_permissions/459b6eb5-b0ee-455f-9e3f-eadc85622542",
+                                    "uuid": "459b6eb5-b0ee-455f-9e3f-eadc85622542",
+                                    "@type": "FieldPermission",
+                                    "field": "warrooms",
+                                    "canRead": true,
+                                    "canWrite": true
+                                }
+                            ],
                             "_fieldPermissionChanged": false
                         },
                         "assets": {
@@ -1125,7 +2444,7 @@
                         "people": {
                             "@type": "ModulePermission",
                             "module": "people",
-                            "canRead": true,
+                            "canRead": false,
                             "canCreate": false,
                             "canDelete": false,
                             "canUpdate": false,
@@ -1188,6 +2507,17 @@
                             "fieldPermissions": [],
                             "_fieldPermissionChanged": false
                         },
+                        "scenario": {
+                            "@type": "ModulePermission",
+                            "module": "scenario",
+                            "canRead": false,
+                            "canCreate": false,
+                            "canDelete": false,
+                            "canUpdate": false,
+                            "canExecute": false,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
                         "security": {
                             "@type": "ModulePermission",
                             "module": "security",
@@ -1195,7 +2525,7 @@
                             "canCreate": false,
                             "canDelete": false,
                             "canUpdate": false,
-                            "canExecute": false,
+                            "canExecute": true,
                             "fieldPermissions": [],
                             "_fieldPermissionChanged": false
                         },
@@ -1364,10 +2694,21 @@
                             "fieldPermissions": [],
                             "_fieldPermissionChanged": false
                         },
+                        "workspaces": {
+                            "@type": "ModulePermission",
+                            "module": "workspaces",
+                            "canRead": false,
+                            "canCreate": false,
+                            "canDelete": false,
+                            "canUpdate": false,
+                            "canExecute": false,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
                         "application": {
                             "@type": "ModulePermission",
                             "module": "application",
-                            "canRead": true,
+                            "canRead": false,
                             "canCreate": false,
                             "canDelete": false,
                             "canUpdate": false,
@@ -1386,10 +2727,21 @@
                             "fieldPermissions": [],
                             "_fieldPermissionChanged": false
                         },
+                        "mitre_groups": {
+                            "@type": "ModulePermission",
+                            "module": "mitre_groups",
+                            "canRead": false,
+                            "canCreate": false,
+                            "canDelete": false,
+                            "canUpdate": false,
+                            "canExecute": false,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
                         "sla_template": {
                             "@type": "ModulePermission",
                             "module": "sla_template",
-                            "canRead": true,
+                            "canRead": false,
                             "canCreate": false,
                             "canDelete": false,
                             "canUpdate": false,
@@ -1430,6 +2782,28 @@
                             "fieldPermissions": [],
                             "_fieldPermissionChanged": false
                         },
+                        "mitre_tactics": {
+                            "@type": "ModulePermission",
+                            "module": "mitre_tactics",
+                            "canRead": false,
+                            "canCreate": false,
+                            "canDelete": false,
+                            "canUpdate": false,
+                            "canExecute": false,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "ooredoo_asset": {
+                            "@type": "ModulePermission",
+                            "module": "ooredoo_asset",
+                            "canRead": true,
+                            "canCreate": true,
+                            "canDelete": true,
+                            "canUpdate": true,
+                            "canExecute": true,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
                         "saved_reports": {
                             "@type": "ModulePermission",
                             "module": "saved_reports",
@@ -1452,6 +2826,28 @@
                             "fieldPermissions": [],
                             "_fieldPermissionChanged": false
                         },
+                        "mitre_software": {
+                            "@type": "ModulePermission",
+                            "module": "mitre_software",
+                            "canRead": false,
+                            "canCreate": false,
+                            "canDelete": false,
+                            "canUpdate": false,
+                            "canExecute": false,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "ooredoo_roster": {
+                            "@type": "ModulePermission",
+                            "module": "ooredoo_roster",
+                            "canRead": true,
+                            "canCreate": true,
+                            "canDelete": true,
+                            "canUpdate": true,
+                            "canExecute": true,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
                         "email_templates": {
                             "@type": "ModulePermission",
                             "module": "email_templates",
@@ -1459,6 +2855,83 @@
                             "canCreate": true,
                             "canDelete": false,
                             "canUpdate": true,
+                            "canExecute": false,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "leave_schedules": {
+                            "@type": "ModulePermission",
+                            "module": "leave_schedules",
+                            "canRead": false,
+                            "canCreate": false,
+                            "canDelete": false,
+                            "canUpdate": false,
+                            "canExecute": false,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "mitre_techniques": {
+                            "@type": "ModulePermission",
+                            "module": "mitre_techniques",
+                            "canRead": false,
+                            "canCreate": false,
+                            "canDelete": false,
+                            "canUpdate": false,
+                            "canExecute": false,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "mitre_mitigations": {
+                            "@type": "ModulePermission",
+                            "module": "mitre_mitigations",
+                            "canRead": false,
+                            "canCreate": false,
+                            "canDelete": false,
+                            "canUpdate": false,
+                            "canExecute": false,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "threat_intel_feeds": {
+                            "@type": "ModulePermission",
+                            "module": "threat_intel_feeds",
+                            "canRead": false,
+                            "canCreate": false,
+                            "canDelete": false,
+                            "canUpdate": false,
+                            "canExecute": false,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "preprocessing_rules": {
+                            "@type": "ModulePermission",
+                            "module": "preprocessing_rules",
+                            "canRead": false,
+                            "canCreate": false,
+                            "canDelete": false,
+                            "canUpdate": false,
+                            "canExecute": false,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "mitre_sub_techniques": {
+                            "@type": "ModulePermission",
+                            "module": "mitre_sub_techniques",
+                            "canRead": false,
+                            "canCreate": false,
+                            "canDelete": false,
+                            "canUpdate": false,
+                            "canExecute": false,
+                            "fieldPermissions": [],
+                            "_fieldPermissionChanged": false
+                        },
+                        "threat_intel_reports": {
+                            "@type": "ModulePermission",
+                            "module": "threat_intel_reports",
+                            "canRead": false,
+                            "canCreate": false,
+                            "canDelete": false,
+                            "canUpdate": false,
                             "canExecute": false,
                             "fieldPermissions": [],
                             "_fieldPermissionChanged": false
@@ -1472,8 +2945,6 @@
                     "_allChecked": true,
                     "description": "Access with viewing rights only, no editing or modification capabilities.",
                     "modulePermissions": {
-                        "hunt": true,
-                        "keys": true,
                         "files": true,
                         "rules": true,
                         "tasks": true,
@@ -1505,7 +2976,6 @@
                         "indicators": true,
                         "application": true,
                         "attachments": true,
-                        "sla_template": true,
                         "announcements": true,
                         "communication": true,
                         "data_archival": true,
@@ -1515,28 +2985,6 @@
                         "leave_schedules": true
                     },
                     "modulePermissionDetails": {
-                        "hunt": {
-                            "@type": "ModulePermission",
-                            "module": "hunt",
-                            "canRead": true,
-                            "canCreate": false,
-                            "canDelete": false,
-                            "canUpdate": false,
-                            "canExecute": false,
-                            "fieldPermissions": [],
-                            "_fieldPermissionChanged": false
-                        },
-                        "keys": {
-                            "@type": "ModulePermission",
-                            "module": "keys",
-                            "canRead": false,
-                            "canCreate": false,
-                            "canDelete": false,
-                            "canUpdate": false,
-                            "canExecute": false,
-                            "fieldPermissions": [],
-                            "_fieldPermissionChanged": false
-                        },
                         "files": {
                             "@type": "ModulePermission",
                             "module": "files",
@@ -1870,17 +3318,6 @@
                         "attachments": {
                             "@type": "ModulePermission",
                             "module": "attachments",
-                            "canRead": true,
-                            "canCreate": false,
-                            "canDelete": false,
-                            "canUpdate": false,
-                            "canExecute": false,
-                            "fieldPermissions": [],
-                            "_fieldPermissionChanged": false
-                        },
-                        "sla_template": {
-                            "@type": "ModulePermission",
-                            "module": "sla_template",
                             "canRead": true,
                             "canCreate": false,
                             "canDelete": false,
@@ -1972,12 +3409,6 @@
             "rules": [
                 {
                     "type": "rule",
-                    "label": "Incident - Notify Creation",
-                    "value": "d65a520b-76d4-4cfb-88e2-137ff7e4f6c5",
-                    "include": true
-                },
-                {
-                    "type": "rule",
                     "label": "Alert - Notify Creation",
                     "value": "d1f99d33-c95b-451a-9d13-dad88e8bac48",
                     "include": true
@@ -1986,6 +3417,12 @@
                     "type": "rule",
                     "label": "Alert - Notify Updates",
                     "value": "1ca73e32-e433-4259-808c-77b4873b748d",
+                    "include": true
+                },
+                {
+                    "type": "rule",
+                    "label": "Incident - Notify Creation",
+                    "value": "d65a520b-76d4-4cfb-88e2-137ff7e4f6c5",
                     "include": true
                 },
                 {
@@ -2016,6 +3453,38 @@
                         "Content Hub",
                         "Help",
                         "User Community"
+                    ],
+                    "navigationOptions": [
+                        {
+                            "title": "Dashboard"
+                        },
+                        {
+                            "title": "Queue & Shift Management"
+                        },
+                        {
+                            "title": "Incident Response"
+                        },
+                        {
+                            "title": "Automation"
+                        },
+                        {
+                            "title": "Resources"
+                        },
+                        {
+                            "title": "Reports"
+                        },
+                        {
+                            "title": "Widget Library"
+                        },
+                        {
+                            "title": "Content Hub"
+                        },
+                        {
+                            "title": "Help"
+                        },
+                        {
+                            "title": "User Community"
+                        }
                     ]
                 },
                 {
@@ -2027,130 +3496,130 @@
                 {
                     "value": "alerts",
                     "includedAttributes": [
-                        "iPAddresses",
-                        "resolvedAutomatedly",
-                        "rule",
                         "ticketID",
-                        "emailClassification",
+                        "rule",
+                        "iPAddresses",
                         "fileHashes",
-                        "respSLApausedon",
+                        "resolvedAutomatedly",
+                        "destinationID",
+                        "vulnerabilitySeverity",
                         "ackSLApausedon",
+                        "campaigns",
+                        "alertDetectionDate",
+                        "respSLApausedon",
+                        "respDate",
+                        "ackDate",
+                        "name",
+                        "assets",
+                        "computerName",
+                        "alerts",
+                        "assignedTo",
+                        "events",
+                        "sourcedata",
+                        "companies",
+                        "dueBy",
+                        "userName",
+                        "tasks",
+                        "userDetails",
+                        "status",
+                        "targetAsset",
+                        "targetProcess",
+                        "severity",
+                        "attachments",
+                        "attachmentNames",
+                        "bytesTransferred",
+                        "commandLine",
+                        "comments",
+                        "decodedCommandLine",
+                        "description",
+                        "destinationIp",
+                        "deviceUID",
+                        "domain",
+                        "epochTime",
+                        "eventTime",
+                        "incidents",
+                        "destinationPort",
+                        "emailClassification",
                         "alertRemainingRespSLA",
                         "alertRemainingAckSLA",
                         "deviceSerialNo",
                         "deviceOwner",
                         "deviceType",
-                        "priorityWeight",
-                        "communications",
-                        "respDate",
-                        "ackDate",
                         "ackSlaStatus",
-                        "respSlaStatus",
                         "assigneddate",
+                        "indicators",
                         "resolveddate",
+                        "respSlaStatus",
                         "closureNotes",
-                        "closureReason",
+                        "url",
+                        "scheduledTask",
+                        "type",
+                        "priorityWeight",
                         "bucketName",
+                        "fileNames",
                         "escalatedtoincident",
                         "escalationReason",
-                        "sourceType",
-                        "alertDetectionDate",
-                        "mitreattackid",
-                        "name",
-                        "alerts",
-                        "assets",
-                        "assignedTo",
-                        "attachments",
-                        "attachmentNames",
-                        "bytesTransferred",
-                        "commandLine",
-                        "campaigns",
-                        "comments",
-                        "companies",
-                        "computerName",
-                        "decodedCommandLine",
-                        "description",
-                        "destinationIp",
-                        "destinationPort",
-                        "destinationID",
-                        "deviceUID",
-                        "domain",
-                        "dueBy",
-                        "fileEmail",
-                        "emailBody",
-                        "emailFrom",
-                        "emailHeaders",
-                        "emailTo",
-                        "emailSubject",
-                        "epochTime",
-                        "events",
-                        "eventTime",
+                        "communications",
+                        "processGuid",
+                        "processId",
+                        "sourceId",
+                        "filePath",
+                        "parentProcessCmdLine",
                         "fileHash",
                         "fileName",
-                        "fileNames",
-                        "filePath",
-                        "incidents",
-                        "indicators",
-                        "hunts",
                         "killChainPhase",
                         "latestLogin",
                         "metrics",
-                        "mitreTechnique",
-                        "parentProcessCmdLine",
                         "parentProcessPid",
                         "parentProcessName",
                         "persons",
-                        "processGuid",
-                        "processId",
                         "processName",
                         "processTree",
                         "respDueDate",
-                        "sourcedata",
-                        "recipientEmailAddress",
                         "registryKey",
                         "registryKeyValue",
-                        "reporter",
-                        "reporterEmailBody",
-                        "returnPath",
-                        "scheduledTask",
-                        "senderDomain",
-                        "senderEmailAddress",
                         "services",
-                        "severity",
                         "source",
                         "sourceIp",
                         "sourcePort",
                         "sourceProcess",
-                        "uuid",
                         "sourceTool",
-                        "sourceId",
+                        "returnPath",
                         "state",
-                        "status",
+                        "sourceType",
                         "warrooms",
-                        "tasks",
-                        "targetAsset",
-                        "targetProcess",
-                        "type",
-                        "url",
-                        "userName",
-                        "userDetails",
-                        "vulnerabilitySeverity"
+                        "closureReason",
+                        "emailFrom",
+                        "reporterEmailBody",
+                        "reporter",
+                        "senderDomain",
+                        "emailBody",
+                        "emailTo",
+                        "recipientEmailAddress",
+                        "emailHeaders",
+                        "senderEmailAddress",
+                        "emailSubject",
+                        "uuid",
+                        "fileEmail",
+                        "mitreattackid",
+                        "mitreTechnique"
                     ]
                 },
                 {
                     "value": "announcements",
                     "includedAttributes": [
-                        "notifyOnEmail",
                         "warrooms",
                         "announcementCriticality",
                         "title",
                         "description",
+                        "notifyOnEmail",
                         "announcementType"
                     ]
                 },
                 {
                     "value": "assets",
                     "includedAttributes": [
+                        "bESCyberAssetCategory",
                         "assetRisk",
                         "sourceData",
                         "emailId",
@@ -2194,24 +3663,23 @@
                         "warrooms",
                         "subnet",
                         "firmware",
-                        "assets",
-                        "bESCyberAssetCategory"
+                        "assets"
                     ]
                 },
                 {
                     "value": "campaigns",
                     "includedAttributes": [
+                        "description",
+                        "incidents",
+                        "indicators",
+                        "malwareEmployed",
+                        "lastSeen",
+                        "intendedEffect",
                         "alerts",
                         "attackVector",
                         "name",
                         "campaignStart",
                         "comments",
-                        "description",
-                        "incidents",
-                        "indicators",
-                        "intendedEffect",
-                        "lastSeen",
-                        "malwareEmployed",
                         "status",
                         "phishingLure",
                         "targetedCves",
@@ -2221,24 +3689,23 @@
                 {
                     "value": "communication",
                     "includedAttributes": [
-                        "comments",
-                        "to",
-                        "warrooms",
-                        "from",
-                        "bcc",
-                        "cc",
-                        "subject",
+                        "emailRefId",
+                        "replyEmailRefID",
                         "body",
                         "msgDirection",
                         "type",
                         "header",
-                        "hunts",
-                        "emailRefId",
-                        "replyEmailRefID",
+                        "comments",
                         "communications",
+                        "file",
+                        "to",
+                        "warrooms",
+                        "from",
                         "alerts",
                         "incidents",
-                        "file"
+                        "bcc",
+                        "cc",
+                        "subject"
                     ]
                 },
                 {
@@ -2255,61 +3722,22 @@
                     ]
                 },
                 {
-                    "value": "hunt",
-                    "includedAttributes": [
-                        "alerts",
-                        "comments",
-                        "communications",
-                        "huntEnd",
-                        "huntStart",
-                        "indicators",
-                        "name",
-                        "siems",
-                        "tasks",
-                        "timeCreated"
-                    ]
-                },
-                {
                     "value": "incidents",
                     "includedAttributes": [
-                        "impactROI",
                         "ticketID",
+                        "impactROI",
+                        "wasPersonalDataAffected",
+                        "warrooms",
                         "incRemainingRespSLA",
                         "incRemainingAckSLA",
                         "respSLApausedon",
                         "ackSLApausedon",
-                        "ackDate",
-                        "communications",
-                        "c2server",
-                        "slaState",
-                        "fileName",
-                        "slaPercentage",
-                        "aftermathDate",
-                        "dLLName",
-                        "alerts",
-                        "processName",
-                        "affectedUser",
-                        "assets",
-                        "affectedHost",
-                        "assigneddate",
-                        "attachments",
-                        "pcapFile",
-                        "otherLogs",
-                        "siemQuery",
+                        "volatileData",
+                        "businessImpact",
                         "comments",
                         "companies",
                         "confirmationDate",
-                        "mitreattackid",
-                        "containmentDate",
-                        "containmentTime",
-                        "dateOfIncident",
-                        "deliveryVector",
-                        "description",
-                        "campaigns",
-                        "destinationIP",
-                        "deviceUID",
-                        "discoveredOn",
-                        "dwellTime",
+                        "senderEmailAddress",
                         "eradicationDate",
                         "filehash",
                         "identificationDate",
@@ -2318,9 +3746,7 @@
                         "incidentsummary",
                         "indicators",
                         "metrics",
-                        "name",
                         "nextsteps",
-                        "wasPersonalDataAffected",
                         "persons",
                         "phase",
                         "incidentphase",
@@ -2333,62 +3759,87 @@
                         "resolveddate",
                         "resSla",
                         "resPercentSla",
-                        "senderEmailAddress",
                         "senderDomain",
                         "severity",
+                        "sourceId",
+                        "targetAsset",
+                        "tasks",
+                        "category",
+                        "ackDueDate",
+                        "responseDate",
+                        "otherLogs",
+                        "siemQuery",
                         "uuid",
+                        "fileName",
+                        "name",
+                        "alerts",
+                        "assets",
+                        "campaigns",
+                        "communications",
+                        "mitreattackid",
+                        "c2server",
+                        "dLLName",
+                        "processName",
+                        "affectedUser",
+                        "affectedHost",
+                        "pcapFile",
+                        "ackDate",
+                        "slaState",
+                        "slaPercentage",
+                        "aftermathDate",
+                        "assigneddate",
+                        "attachments",
+                        "containmentDate",
+                        "containmentTime",
+                        "dateOfIncident",
+                        "deliveryVector",
+                        "description",
+                        "destinationIP",
+                        "deviceUID",
+                        "discoveredOn",
+                        "dwellTime",
                         "source",
                         "sourcedata",
                         "sourceIP",
-                        "status",
-                        "targetAsset",
-                        "responseDate",
-                        "tasks",
-                        "category",
-                        "warrooms",
-                        "sourceId",
-                        "ackDueDate",
-                        "volatileData",
-                        "businessImpact"
+                        "status"
                     ]
                 },
                 {
                     "value": "indicators",
                     "includedAttributes": [
-                        "confidence",
-                        "sourceID",
+                        "attachments",
+                        "uuid",
+                        "description",
                         "sourceData",
-                        "tlp",
-                        "enrichmentStatus",
-                        "expiredStatus",
-                        "expiryDate",
+                        "companies",
+                        "incidents",
+                        "persons",
                         "lastSeen",
                         "firstSeen",
-                        "indicatorStatus",
-                        "campaigns",
-                        "hunts",
-                        "file",
-                        "uuid",
-                        "typeofindicator",
-                        "reputation",
-                        "value",
-                        "description",
-                        "sources",
                         "events",
                         "alerts",
                         "assets",
-                        "companies",
-                        "incidents",
-                        "attachments",
+                        "enrichmentStatus",
+                        "warrooms",
+                        "campaigns",
+                        "expiryDate",
+                        "expiredStatus",
+                        "tlp",
+                        "sourceID",
+                        "confidence",
+                        "indicatorStatus",
+                        "typeofindicator",
+                        "value",
+                        "file",
+                        "sources",
                         "comments",
-                        "persons",
                         "indicators",
                         "filehashMD5",
                         "filehashSHA1",
-                        "tasks",
                         "filehashSHA256",
-                        "warrooms",
-                        "country"
+                        "country",
+                        "tasks",
+                        "reputation"
                     ]
                 },
                 {
@@ -2401,33 +3852,16 @@
                     ]
                 },
                 {
-                    "value": "sla_template",
-                    "includedAttributes": [
-                        "incPauseSLAOn",
-                        "altPauseSLAOn",
-                        "ackSlaTime",
-                        "incSeverity",
-                        "resTime",
-                        "slaTrackedOn",
-                        "resSlaTrackedOn",
-                        "alertAckTime",
-                        "alertResTime",
-                        "alertAckTrackedOn",
-                        "alertResTrackedOn"
-                    ]
-                },
-                {
                     "value": "warrooms",
                     "includedAttributes": [
-                        "announcements",
+                        "closedOn",
+                        "status",
                         "currentStatus",
                         "title",
                         "subtitle",
                         "summary",
                         "nextSteps",
                         "activeSince",
-                        "closedOn",
-                        "status",
                         "conferenceBridge",
                         "conferenceBridgeIntegration",
                         "collaboration",
@@ -2437,10 +3871,11 @@
                         "comments",
                         "incidents",
                         "alerts",
-                        "attachments",
                         "assets",
                         "indicators",
                         "launchedBy",
+                        "attachments",
+                        "announcements",
                         "communication"
                     ]
                 }
@@ -2605,18 +4040,23 @@
                         "includeVersions": false,
                         "includeSchedules": true,
                         "includeGlobalVariables": true
+                    },
+                    {
+                        "label": "vivek",
+                        "value": "33f0ab21-60d4-4f9b-8178-a795be8399db",
+                        "include": true,
+                        "recordCount": 0,
+                        "includeVersions": true,
+                        "includeSchedules": true,
+                        "includeGlobalVariables": true
                     }
                 ],
                 "globalVariables": [
                     "PB_Log_TTL",
                     "Default_Indicator_TTL_Days",
-                    "Indicator_Type_Map",
-                    "Reset_SLA",
                     "Excludelist_IPs",
                     "Excludelist_URLs",
-                    "Excludelist_Domains",
-                    "Excludelist_Files",
-                    "Excludelist_Ports"
+                    "Excludelist_Domains"
                 ]
             },
             "connectors": [],
@@ -2748,9 +4188,6 @@
                 "modules-events-list",
                 "modules-events-detail",
                 "modules-events-form",
-                "modules-hunt-list",
-                "modules-hunt-detail",
-                "modules-hunt-form",
                 "modules-incidents-list",
                 "modules-incidents-detail",
                 "modules-incidents-form",
@@ -2760,9 +4197,6 @@
                 "modules-keys-list",
                 "modules-keys-detail",
                 "modules-keys-form",
-                "modules-sla_template-list",
-                "modules-sla_template-detail",
-                "modules-sla_template-form",
                 "modules-warrooms-list",
                 "modules-warrooms-detail",
                 "modules-warrooms-form"

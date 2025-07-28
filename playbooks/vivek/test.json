@@ -1,0 +1,174 @@
+{
+    "@context": "\/api\/3\/contexts\/Workflow",
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "test",
+    "aliasName": null,
+    "tag": null,
+    "description": null,
+    "isActive": true,
+    "debug": true,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/33f0ab21-60d4-4f9b-8178-a795be8399db",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/087af0e4-2429-40cf-a420-9959b32fba4f",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Copy of get org repos",
+            "description": null,
+            "arguments": {
+                "name": "GitHub",
+                "config": "0dd59b25-aa42-4986-a274-f7924ffc1a3c",
+                "params": {
+                    "name": "spryiq\/fsoar-prod-settings",
+                    "owner": "Viveek96",
+                    "private": false,
+                    "has_wiki": true,
+                    "homepage": "",
+                    "repo_type": "User",
+                    "has_issues": true,
+                    "description": "",
+                    "is_template": false,
+                    "has_projects": true,
+                    "other_fields": ""
+                },
+                "version": "2.0.0",
+                "connector": "github",
+                "operation": "create_repository",
+                "operationTitle": "Create Repository",
+                "pickFromTenant": false,
+                "step_variables": []
+            },
+            "status": null,
+            "top": "80",
+            "left": "640",
+            "stepType": "\/api\/3\/workflow_step_types\/0bfed618-0316-11e7-93ae-92361f002671",
+            "group": null,
+            "uuid": "97d2818f-9b87-486b-b2ef-587d02c64e17"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "get",
+            "description": null,
+            "arguments": {
+                "query": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": []
+                },
+                "module": "change_management?$limit=30",
+                "step_variables": []
+            },
+            "status": null,
+            "top": "229",
+            "left": "381",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928770",
+            "group": null,
+            "uuid": "611eeaba-f4b9-458a-a1c6-4e007d69f534"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "get org repos",
+            "description": null,
+            "arguments": {
+                "name": "GitHub",
+                "config": "0dd59b25-aa42-4986-a274-f7924ffc1a3c",
+                "params": {
+                    "org": "spryiq",
+                    "page": "",
+                    "sort": "Created",
+                    "type": "All",
+                    "per_page": "",
+                    "direction": "Desc"
+                },
+                "version": "2.0.0",
+                "connector": "github",
+                "operation": "list_organization_repositories",
+                "operationTitle": "List Organization Repositories",
+                "pickFromTenant": false,
+                "step_variables": []
+            },
+            "status": null,
+            "top": "288",
+            "left": "481",
+            "stepType": "\/api\/3\/workflow_step_types\/0bfed618-0316-11e7-93ae-92361f002671",
+            "group": null,
+            "uuid": "74d6937c-1ded-4733-a6ae-bb86cfa67cdd"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "route": "b61ffccd-4741-4621-8eba-8feb3e1689d5",
+                "resources": [
+                    "change_management",
+                    "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                    "input": {
+                        "params": [],
+                        "records": "{{vars.input.records}}"
+                    }
+                },
+                "triggerOnSource": true,
+                "displayConditions": {
+                    "alerts": {
+                        "sort": [],
+                        "limit": 30,
+                        "logic": "AND",
+                        "filters": []
+                    },
+                    "change_management": {
+                        "sort": [],
+                        "limit": 30,
+                        "logic": "AND",
+                        "filters": []
+                    }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                    "visible": false,
+                    "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+            },
+            "status": null,
+            "top": "40",
+            "left": "40",
+            "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+            "group": null,
+            "uuid": "087af0e4-2429-40cf-a420-9959b32fba4f"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> get",
+            "targetStep": "\/api\/3\/workflow_steps\/611eeaba-f4b9-458a-a1c6-4e007d69f534",
+            "sourceStep": "\/api\/3\/workflow_steps\/087af0e4-2429-40cf-a420-9959b32fba4f",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "ae467656-6764-4d67-83b9-d9d3c640d9d7"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "playbookOrigin": "\/api\/3\/picklists\/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+    "isEditable": true,
+    "uuid": "eb1e2323-673d-4182-8aa9-4b2008669013",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": []
+}

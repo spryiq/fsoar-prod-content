@@ -1,0 +1,128 @@
+{
+    "@context": "\/api\/3\/contexts\/Workflow",
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "change resolve and ack date",
+    "aliasName": null,
+    "tag": null,
+    "description": null,
+    "isActive": true,
+    "debug": true,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/33f0ab21-60d4-4f9b-8178-a795be8399db",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/15953f09-530f-464f-9589-c8ed59b5830e",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Get random dates",
+            "description": null,
+            "arguments": {
+                "dates": "{% set random_days = range(-30, 31) %}{% set ack_dates = [] %}{% set resolve_dates = [] %}{% for i in range(8) %}{% set random_day_ack = random_days | random %}{% set random_day_resolve = random_days | random %}{% set ack_epoch = (arrow.utcnow().int_timestamp+ random_day_ack * 86400) %}{% set resolve_epoch = (arrow.utcnow().int_timestamp + random_day_resolve * 86400) %}{% do ack_dates.append(ack_epoch) %}{% do resolve_dates.append(resolve_epoch) %}{% endfor %}{{ {'ack':ack_dates,'response':ack_dates}}}"
+            },
+            "status": null,
+            "top": "300",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "76a53373-ef8b-4820-b485-37e96d36cefe"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Get records",
+            "description": null,
+            "arguments": {
+                "query": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": [
+                        {
+                            "type": "primitive",
+                            "field": "name",
+                            "value": "%vivek%",
+                            "operator": "like",
+                            "_operator": "like"
+                        }
+                    ]
+                },
+                "module": "alerts?$limit=30",
+                "step_variables": []
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928770",
+            "group": null,
+            "uuid": "c171c460-4ecc-4978-9384-d2514592b90b"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "route": "42c37642-c6f8-432f-8117-0bcc8d0c97a5",
+                "resources": [
+                    "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                    "input": {
+                        "params": [],
+                        "records": "{{vars.input.records}}"
+                    }
+                },
+                "triggerOnSource": true,
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                    "visible": false,
+                    "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+            },
+            "status": null,
+            "top": "30",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+            "group": null,
+            "uuid": "15953f09-530f-464f-9589-c8ed59b5830e"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Get records -> Get random dates",
+            "targetStep": "\/api\/3\/workflow_steps\/76a53373-ef8b-4820-b485-37e96d36cefe",
+            "sourceStep": "\/api\/3\/workflow_steps\/c171c460-4ecc-4978-9384-d2514592b90b",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "13645fc2-a40e-43ad-8d66-6509aeaf975e"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Get records",
+            "targetStep": "\/api\/3\/workflow_steps\/c171c460-4ecc-4978-9384-d2514592b90b",
+            "sourceStep": "\/api\/3\/workflow_steps\/15953f09-530f-464f-9589-c8ed59b5830e",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "adf10603-af99-420c-8969-acaa6365fa17"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "playbookOrigin": "\/api\/3\/picklists\/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+    "isEditable": true,
+    "uuid": "32d9ea01-6dac-4bb8-b0f5-eb05c82fe6b2",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": []
+}
