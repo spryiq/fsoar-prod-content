@@ -6,7 +6,7 @@
     "tag": null,
     "description": "Extracts indicators from the attachment of the suspicious email",
     "isActive": true,
-    "debug": false,
+    "debug": true,
     "singleRecordExecution": false,
     "remoteExecutableFlag": false,
     "parameters": [
@@ -111,17 +111,17 @@
                     "data": "{{vars.item.data['extracted_text']}}",
                     "whitelist": "{{vars.input.params.excludedIndicators}}",
                     "case_sensitive": false,
-                    "private_whitelist": true,
-                    "extract_defang_indicators": false
+                    "override_regex": false,
+                    "private_whitelist": true
                 },
-                "version": "3.5.0",
+                "version": "3.3.0",
                 "for_each": {
                     "item": "{{vars.extracted_text}}",
                     "parallel": false,
                     "condition": "{{vars.item.data['extracted_text']}}"
                 },
                 "connector": "cyops_utilities",
-                "operation": "extract_artifacts_new",
+                "operation": "extract_artifacts",
                 "operationTitle": "FSR: Extract Artifacts from String",
                 "step_variables": []
             },
@@ -519,8 +519,8 @@
     ],
     "groups": [],
     "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
-    "playbookOrigin": "\/api\/3\/picklists\/b6d710a9-a8ec-41ec-8817-fe9fa062fcdd",
-    "isEditable": false,
+    "playbookOrigin": "\/api\/3\/picklists\/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+    "isEditable": true,
     "uuid": "b7cd4c27-6298-4093-9689-dfc7b26d0e7e",
     "owners": [],
     "isPrivate": false,

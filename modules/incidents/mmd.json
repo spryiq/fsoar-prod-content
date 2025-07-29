@@ -1638,29 +1638,22 @@
                 "minlength": 0,
                 "required": [
                     {
-                        "filters": [
-                            {
-                                "_operator": "eq",
-                                "field": "status",
-                                "operator": "eq",
-                                "type": "primitive",
-                                "value": {
-                                    "@context": "\/api\/3\/contexts\/Picklist",
-                                    "@id": "\/api\/3\/picklists\/bb73fd5e-f699-11e7-8c3f-9a214cf093ae",
-                                    "@type": "Picklist",
-                                    "color": null,
-                                    "display": "Resolved",
-                                    "icon": null,
-                                    "id": 111,
-                                    "itemValue": "Resolved",
-                                    "listName": "\/api\/3\/picklist_names\/a549e41c-31ca-406d-89ae-eab3de5c06c4",
-                                    "orderIndex": 3
-                                }
-                            }
-                        ],
+                        "sort": [],
                         "limit": 30,
                         "logic": "OR",
-                        "sort": []
+                        "filters": [
+                            {
+                                "field": "status",
+                                "operator": "eq",
+                                "value": "\/api\/3\/picklists\/bb73fd5e-f699-11e7-8c3f-9a214cf093ae",
+                                "_value": {
+                                    "display": "Resolved",
+                                    "itemValue": "Resolved",
+                                    "@id": "\/api\/3\/picklists\/bb73fd5e-f699-11e7-8c3f-9a214cf093ae"
+                                },
+                                "type": "object"
+                            }
+                        ]
                     }
                 ]
             },
@@ -1672,29 +1665,22 @@
             "tooltip": "",
             "visibility": [
                 {
-                    "filters": [
-                        {
-                            "_operator": "eq",
-                            "field": "status",
-                            "operator": "eq",
-                            "type": "primitive",
-                            "value": {
-                                "@context": "\/api\/3\/contexts\/Picklist",
-                                "@id": "\/api\/3\/picklists\/bb73fd5e-f699-11e7-8c3f-9a214cf093ae",
-                                "@type": "Picklist",
-                                "color": null,
-                                "display": "Resolved",
-                                "icon": null,
-                                "id": 111,
-                                "itemValue": "Resolved",
-                                "listName": "\/api\/3\/picklist_names\/a549e41c-31ca-406d-89ae-eab3de5c06c4",
-                                "orderIndex": 3
-                            }
-                        }
-                    ],
+                    "sort": [],
                     "limit": 30,
                     "logic": "OR",
-                    "sort": []
+                    "filters": [
+                        {
+                            "field": "status",
+                            "operator": "eq",
+                            "value": "\/api\/3\/picklists\/bb73fd5e-f699-11e7-8c3f-9a214cf093ae",
+                            "_value": {
+                                "display": "Resolved",
+                                "itemValue": "Resolved",
+                                "@id": "\/api\/3\/picklists\/bb73fd5e-f699-11e7-8c3f-9a214cf093ae"
+                            },
+                            "type": "object"
+                        }
+                    ]
                 }
             ],
             "htmlEscape": false,

@@ -6,7 +6,7 @@
     "tag": "#Subroutine",
     "description": "Pre-process the IP Address indicator",
     "isActive": true,
-    "debug": false,
+    "debug": true,
     "singleRecordExecution": false,
     "remoteExecutableFlag": false,
     "parameters": [
@@ -54,7 +54,7 @@
                         {
                             "type": "primitive",
                             "field": "key",
-                            "value": "sfsp-indicator-extraction-configuration",
+                            "value": "sfsp-excludelist-cidr-ranges",
                             "operator": "eq",
                             "_operator": "eq"
                         }
@@ -163,10 +163,10 @@
             "description": null,
             "arguments": {
                 "params": {
-                    "cidr": "{{vars.steps.Get_CIDR_Range[0].jSONValue['CIDR Range'].excludedIOCs}}",
+                    "cidr": "{{vars.steps.Get_CIDR_Range[0].jSONValue}}",
                     "ip_address": "{{vars.input.params['indicator_value']}}"
                 },
-                "version": "3.5.0",
+                "version": "3.3.0",
                 "connector": "cyops_utilities",
                 "operation": "ip_cidr_check",
                 "operationTitle": "Utils: Is IP in CIDR",
@@ -286,7 +286,7 @@
             "label": null,
             "isExecuted": false,
             "group": null,
-            "uuid": "da38852a-2b53-44a0-a022-d4c704729f85"
+            "uuid": "19cdfbad-d696-478d-b590-a46863c06b4f"
         },
         {
             "@type": "WorkflowRoute",
@@ -371,8 +371,8 @@
     ],
     "groups": [],
     "priority": null,
-    "playbookOrigin": "\/api\/3\/picklists\/b6d710a9-a8ec-41ec-8817-fe9fa062fcdd",
-    "isEditable": false,
+    "playbookOrigin": "\/api\/3\/picklists\/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+    "isEditable": true,
     "uuid": "846a0e87-c5e9-4181-a9ab-f3b3f1e521cb",
     "owners": [],
     "isPrivate": false,

@@ -1,6 +1,7 @@
 {
     "@context": "\/api\/3\/contexts\/Dashboard",
     "@type": "Dashboard",
+    "isDefault": false,
     "uuid": "82bc8209-ef8d-463d-bcd8-db3ac08882cb-444d",
     "displayName": "SOC Admin",
     "type": "rows",

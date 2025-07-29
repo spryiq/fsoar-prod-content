@@ -1,6 +1,7 @@
 {
     "@context": "\/api\/3\/contexts\/Dashboard",
     "@type": "Dashboard",
+    "isDefault": false,
     "uuid": "f59eaa50-8f79-4d20-bc69-79ee19e2e0c2",
     "displayName": "Overview",
     "type": "rows",

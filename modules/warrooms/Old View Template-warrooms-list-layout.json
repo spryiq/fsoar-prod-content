@@ -1,0 +1,29 @@
+{
+    "@context": "\/api\/3\/contexts\/SystemViewTemplate",
+    "@type": "SystemViewTemplate",
+    "type": "rows",
+    "config": {
+        "rows": [
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "grid",
+                                "config": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "module": "warrooms",
+    "filters": [],
+    "isDefault": false,
+    "visible": false,
+    "viewOptions": "list",
+    "name": "Old View Template",
+    "system": true,
+    "uuid": "modules-warrooms-list"
+}

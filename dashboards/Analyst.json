@@ -1,6 +1,7 @@
 {
     "@context": "\/api\/3\/contexts\/Dashboard",
     "@type": "Dashboard",
+    "isDefault": false,
     "uuid": "add96996-0f45-4d15-a897-1b77a9444336",
     "displayName": "Analyst",
     "type": "rows",
@@ -274,14 +275,11 @@
                                                                                     "subTitle4": "dueBy"
                                                                                 },
                                                                                 "title": "SLA Expiring In 7 Days",
-                                                                                "module": "alerts",
-                                                                                "assignedToSetting": "onlyMe"
-                                                                            },
-                                                                            "visible": true
+                                                                                "module": "alerts"
+                                                                            }
                                                                         },
                                                                         "icon": "fa fa-clock-o",
-                                                                        "show": true,
-                                                                        "visible": true
+                                                                        "show": true
                                                                     },
                                                                     {
                                                                         "title": "Critical Alerts",
@@ -347,12 +345,10 @@
                                                                                 },
                                                                                 "title": "Critical\/High Severity Alerts",
                                                                                 "module": "alerts"
-                                                                            },
-                                                                            "visible": true
+                                                                            }
                                                                         },
                                                                         "icon": "fa fa-compass",
-                                                                        "show": false,
-                                                                        "visible": true
+                                                                        "show": false
                                                                     }
                                                                 ]
                                                             }
@@ -593,8 +589,7 @@
                                                                     "subTitle4": "ackDueDate"
                                                                 },
                                                                 "title": "Critical\/High Severity Incidents",
-                                                                "module": "incidents",
-                                                                "assignedToSetting": "onlyMe"
+                                                                "module": "incidents"
                                                             }
                                                         }
                                                     ],
@@ -758,8 +753,7 @@
                                                                     "subTitle4": "dueBy"
                                                                 },
                                                                 "title": "Assigned Tasks",
-                                                                "module": "tasks",
-                                                                "assignedToSetting": "onlyMe"
+                                                                "module": "tasks"
                                                             }
                                                         }
                                                     ],
@@ -783,10 +777,7 @@
                 "container": true
             }
         ],
-        "wid": "de46e68e-94b4-4e38-8286-67d7f461d415",
-        "metadata": {
-            "customTemplateTitle": "COMPONENTS.BREADCRUMB.DASHBOARD"
-        }
+        "wid": "de46e68e-94b4-4e38-8286-67d7f461d415"
     },
     "filterArray": [],
     "updateDate": null

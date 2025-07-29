@@ -1,0 +1,100 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Test1",
+    "aliasName": null,
+    "tag": null,
+    "description": null,
+    "isActive": true,
+    "debug": true,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/4dc865c8-012e-4326-8be5-252b723ea734",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/a23fb9d3-c3a7-4d31-8026-1aa2b92087ce",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Shfit",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "name": "Morning",
+                    "endDate": 1733139000,
+                    "__replace": "",
+                    "startDate": 1733077800
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/shifts",
+                "__recommend": [],
+                "fieldOperation": {
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": []
+            },
+            "status": null,
+            "top": "140",
+            "left": "380",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "a2ac48ce-a006-4077-a024-4aa90cd445d8"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "route": "6de2715a-4ea0-4db3-9792-44c5bf114996",
+                "resources": [
+                    "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                    "input": {
+                        "params": [],
+                        "records": "{{vars.input.records}}"
+                    }
+                },
+                "triggerOnSource": true,
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                    "visible": false,
+                    "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+            },
+            "status": null,
+            "top": "40",
+            "left": "40",
+            "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+            "group": null,
+            "uuid": "a23fb9d3-c3a7-4d31-8026-1aa2b92087ce"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Shfit",
+            "targetStep": "\/api\/3\/workflow_steps\/a2ac48ce-a006-4077-a024-4aa90cd445d8",
+            "sourceStep": "\/api\/3\/workflow_steps\/a23fb9d3-c3a7-4d31-8026-1aa2b92087ce",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "11458865-601b-4490-a343-2444c8c71830"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "playbookOrigin": "\/api\/3\/picklists\/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+    "isEditable": true,
+    "uuid": "4cf28839-c1e8-4a1a-9de8-06d129ac006a",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": []
+}

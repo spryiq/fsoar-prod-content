@@ -18,16 +18,6 @@
         {
             "@type": "ModulePermission",
             "canCreate": true,
-            "canExecute": true,
-            "canRead": true,
-            "canUpdate": true,
-            "canDelete": true,
-            "fieldPermissions": [],
-            "module": "users"
-        },
-        {
-            "@type": "ModulePermission",
-            "canCreate": true,
             "canExecute": false,
             "canRead": true,
             "canUpdate": true,
@@ -64,6 +54,16 @@
             "canDelete": true,
             "fieldPermissions": [],
             "module": "scenario"
+        },
+        {
+            "@type": "ModulePermission",
+            "canCreate": true,
+            "canExecute": true,
+            "canRead": true,
+            "canUpdate": true,
+            "canDelete": true,
+            "fieldPermissions": [],
+            "module": "sla_template"
         },
         {
             "@type": "ModulePermission",
@@ -491,7 +491,7 @@
             "canExecute": true,
             "canRead": true,
             "canUpdate": true,
-            "canDelete": false,
+            "canDelete": true,
             "fieldPermissions": [],
             "module": "keys"
         },
@@ -528,32 +528,12 @@
         {
             "@type": "ModulePermission",
             "canCreate": true,
-            "canExecute": true,
-            "canRead": true,
-            "canUpdate": true,
-            "canDelete": true,
-            "fieldPermissions": [],
-            "module": "ooredoo_asset"
-        },
-        {
-            "@type": "ModulePermission",
-            "canCreate": true,
-            "canExecute": true,
-            "canRead": true,
-            "canUpdate": true,
-            "canDelete": true,
-            "fieldPermissions": [],
-            "module": "ooredoo_roster"
-        },
-        {
-            "@type": "ModulePermission",
-            "canCreate": false,
             "canExecute": false,
-            "canRead": false,
-            "canUpdate": false,
-            "canDelete": false,
+            "canRead": true,
+            "canUpdate": true,
+            "canDelete": true,
             "fieldPermissions": [],
-            "module": "sla_template"
+            "module": "qradar_datas"
         }
     ],
     "uuid": "21d7a7c6-9d68-438f-b732-e8950c5f745b"

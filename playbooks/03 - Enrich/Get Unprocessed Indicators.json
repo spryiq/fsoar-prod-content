@@ -5,8 +5,8 @@
     "aliasName": null,
     "tag": null,
     "description": "Fetches the indicators for which enrichment has been failed and mark their `Enrichment Status` to Failed",
-    "isActive": false,
-    "debug": false,
+    "isActive": true,
+    "debug": true,
     "singleRecordExecution": false,
     "remoteExecutableFlag": false,
     "parameters": [],
@@ -259,8 +259,8 @@
     ],
     "groups": [],
     "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
-    "playbookOrigin": "/api/3/picklists/b6d710a9-a8ec-41ec-8817-fe9fa062fcdd",
-    "isEditable": false,
+    "playbookOrigin": "/api/3/picklists/15c1e8c9-22bf-4e66-8fbb-0a502d4a4a3f",
+    "isEditable": true,
     "uuid": "7bbbacb9-f241-4d5d-a81f-8fdd11dfc276",
     "owners": [],
     "isPrivate": false,
@@ -271,7 +271,7 @@
     "schedules": [
         {
             "crontab": {
-                "id": 14,
+                "id": 13,
                 "minute": "1",
                 "hour": "0",
                 "day_of_week": "*",
@@ -306,7 +306,7 @@
                 },
                 "referenceid": null,
                 "schedule_entry_name": "Get Unprocessed Indicators",
-                "schedule_id": "5246fcd7-932a-4313-b7fa-c1eb70a7e08d"
+                "schedule_id": "ad1b9286-06b1-4e15-a09c-0844f3229835"
             },
             "queue": null,
             "exchange": null,

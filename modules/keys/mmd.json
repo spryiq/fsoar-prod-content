@@ -9,7 +9,7 @@
     "queueable": false,
     "trackable": true,
     "taggable": true,
-    "peerReplicable": true,
+    "peerReplicable": false,
     "defaultSort": [
         {
             "direction": "ASC",

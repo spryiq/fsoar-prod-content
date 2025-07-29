@@ -7,13 +7,83 @@
     "modulePermissions": [
         {
             "@type": "ModulePermission",
-            "canCreate": false,
+            "canCreate": true,
             "canExecute": true,
+            "canRead": true,
+            "canUpdate": true,
+            "canDelete": true,
+            "fieldPermissions": [],
+            "module": "announcements"
+        },
+        {
+            "@type": "ModulePermission",
+            "canCreate": false,
+            "canExecute": false,
             "canRead": false,
             "canUpdate": false,
             "canDelete": false,
             "fieldPermissions": [],
-            "module": "widgets"
+            "module": "appliances"
+        },
+        {
+            "@type": "ModulePermission",
+            "canCreate": false,
+            "canExecute": false,
+            "canRead": true,
+            "canUpdate": false,
+            "canDelete": false,
+            "fieldPermissions": [],
+            "module": "application"
+        },
+        {
+            "@type": "ModulePermission",
+            "canCreate": true,
+            "canExecute": true,
+            "canRead": true,
+            "canUpdate": true,
+            "canDelete": true,
+            "fieldPermissions": [],
+            "module": "approvals"
+        },
+        {
+            "@type": "ModulePermission",
+            "canCreate": true,
+            "canExecute": true,
+            "canRead": true,
+            "canUpdate": true,
+            "canDelete": true,
+            "fieldPermissions": [],
+            "module": "assets"
+        },
+        {
+            "@type": "ModulePermission",
+            "canCreate": true,
+            "canExecute": true,
+            "canRead": true,
+            "canUpdate": true,
+            "canDelete": true,
+            "fieldPermissions": [],
+            "module": "attachments"
+        },
+        {
+            "@type": "ModulePermission",
+            "canCreate": false,
+            "canExecute": false,
+            "canRead": true,
+            "canUpdate": false,
+            "canDelete": false,
+            "fieldPermissions": [],
+            "module": "activities"
+        },
+        {
+            "@type": "ModulePermission",
+            "canCreate": true,
+            "canExecute": true,
+            "canRead": true,
+            "canUpdate": true,
+            "canDelete": true,
+            "fieldPermissions": [],
+            "module": "campaigns"
         },
         {
             "@type": "ModulePermission",
@@ -117,6 +187,16 @@
         },
         {
             "@type": "ModulePermission",
+            "canCreate": true,
+            "canExecute": true,
+            "canRead": true,
+            "canUpdate": true,
+            "canDelete": false,
+            "fieldPermissions": [],
+            "module": "sla_template"
+        },
+        {
+            "@type": "ModulePermission",
             "canCreate": false,
             "canExecute": false,
             "canRead": false,
@@ -134,86 +214,6 @@
             "canDelete": true,
             "fieldPermissions": [],
             "module": "alerts"
-        },
-        {
-            "@type": "ModulePermission",
-            "canCreate": true,
-            "canExecute": true,
-            "canRead": true,
-            "canUpdate": true,
-            "canDelete": true,
-            "fieldPermissions": [],
-            "module": "announcements"
-        },
-        {
-            "@type": "ModulePermission",
-            "canCreate": false,
-            "canExecute": false,
-            "canRead": false,
-            "canUpdate": false,
-            "canDelete": false,
-            "fieldPermissions": [],
-            "module": "appliances"
-        },
-        {
-            "@type": "ModulePermission",
-            "canCreate": false,
-            "canExecute": false,
-            "canRead": true,
-            "canUpdate": false,
-            "canDelete": false,
-            "fieldPermissions": [],
-            "module": "application"
-        },
-        {
-            "@type": "ModulePermission",
-            "canCreate": true,
-            "canExecute": true,
-            "canRead": true,
-            "canUpdate": true,
-            "canDelete": true,
-            "fieldPermissions": [],
-            "module": "approvals"
-        },
-        {
-            "@type": "ModulePermission",
-            "canCreate": true,
-            "canExecute": true,
-            "canRead": true,
-            "canUpdate": true,
-            "canDelete": true,
-            "fieldPermissions": [],
-            "module": "assets"
-        },
-        {
-            "@type": "ModulePermission",
-            "canCreate": true,
-            "canExecute": true,
-            "canRead": true,
-            "canUpdate": true,
-            "canDelete": true,
-            "fieldPermissions": [],
-            "module": "attachments"
-        },
-        {
-            "@type": "ModulePermission",
-            "canCreate": false,
-            "canExecute": false,
-            "canRead": true,
-            "canUpdate": false,
-            "canDelete": false,
-            "fieldPermissions": [],
-            "module": "activities"
-        },
-        {
-            "@type": "ModulePermission",
-            "canCreate": true,
-            "canExecute": true,
-            "canRead": true,
-            "canUpdate": true,
-            "canDelete": true,
-            "fieldPermissions": [],
-            "module": "campaigns"
         },
         {
             "@type": "ModulePermission",
@@ -478,22 +478,22 @@
         {
             "@type": "ModulePermission",
             "canCreate": false,
+            "canExecute": true,
+            "canRead": false,
+            "canUpdate": false,
+            "canDelete": false,
+            "fieldPermissions": [],
+            "module": "widgets"
+        },
+        {
+            "@type": "ModulePermission",
+            "canCreate": false,
             "canExecute": false,
             "canRead": false,
             "canUpdate": false,
             "canDelete": false,
             "fieldPermissions": [],
             "module": "leave_schedules"
-        },
-        {
-            "@type": "ModulePermission",
-            "canCreate": true,
-            "canExecute": true,
-            "canRead": true,
-            "canUpdate": true,
-            "canDelete": true,
-            "fieldPermissions": [],
-            "module": "ooredoo_asset"
         },
         {
             "@type": "ModulePermission",
@@ -508,22 +508,22 @@
         {
             "@type": "ModulePermission",
             "canCreate": true,
-            "canExecute": true,
+            "canExecute": false,
             "canRead": true,
             "canUpdate": true,
             "canDelete": true,
             "fieldPermissions": [],
-            "module": "ooredoo_roster"
+            "module": "qradar_datas"
         },
         {
             "@type": "ModulePermission",
-            "canCreate": false,
+            "canCreate": true,
             "canExecute": false,
-            "canRead": false,
-            "canUpdate": false,
+            "canRead": true,
+            "canUpdate": true,
             "canDelete": false,
             "fieldPermissions": [],
-            "module": "sla_template"
+            "module": "rule_databases"
         },
         {
             "@type": "ModulePermission",

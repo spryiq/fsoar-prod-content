@@ -54,6 +54,26 @@
             "icon": null,
             "listName": "\/api\/3\/picklist_names\/a549e41c-31ca-406d-89ae-eab3de5c06c4",
             "uuid": "bb74042a-f699-11e7-8c3f-9a214cf093ae"
+        },
+        {
+            "@id": "\/api\/3\/picklists\/e3adc111-051e-4f19-91ef-c8316fb58e51",
+            "@type": "Picklist",
+            "itemValue": "Received Customer Feedback",
+            "orderIndex": 5,
+            "color": null,
+            "icon": null,
+            "listName": "\/api\/3\/picklist_names\/a549e41c-31ca-406d-89ae-eab3de5c06c4",
+            "uuid": "e3adc111-051e-4f19-91ef-c8316fb58e51"
+        },
+        {
+            "@id": "\/api\/3\/picklists\/a2c9f320-dc27-4058-8a45-641e3f9cc3ae",
+            "@type": "Picklist",
+            "itemValue": "Pending Customer Feedback",
+            "orderIndex": 6,
+            "color": null,
+            "icon": null,
+            "listName": "\/api\/3\/picklist_names\/a549e41c-31ca-406d-89ae-eab3de5c06c4",
+            "uuid": "a2c9f320-dc27-4058-8a45-641e3f9cc3ae"
         }
     ],
     "uuid": "a549e41c-31ca-406d-89ae-eab3de5c06c4"

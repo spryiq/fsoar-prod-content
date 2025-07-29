@@ -39,6 +39,41 @@
                                                                 },
                                                                 "sectionText": "<p style=\"text-align: center; background: #4e94d0; width: 100%;\"><span style=\"font-size: 20pt;\"><strong><span style=\"color: #efefee;\">High Impact Incidents<\/span><\/strong><\/span><\/p>"
                                                             }
+                                                        },
+                                                        {
+                                                            "type": "performanceMetrics",
+                                                            "config": {
+                                                                "wid": "ff8488a8-fc3f-4bb3-bceb-abc5d45b639c",
+                                                                "grouping": {
+                                                                    "primary": [],
+                                                                    "secondary": []
+                                                                },
+                                                                "currencySymbol": "$",
+                                                                "currency": "dollar",
+                                                                "showSavings": "cost",
+                                                                "includeFailedPlaybooks": true,
+                                                                "excludeConfigActions": true,
+                                                                "days": 15,
+                                                                "showPercentageChanges": true,
+                                                                "metricsType": "totalCount",
+                                                                "resource": "alerts",
+                                                                "query": {
+                                                                    "sort": [],
+                                                                    "limit": 30,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "field": "destinationIp",
+                                                                            "operator": "eq",
+                                                                            "_operator": "eq",
+                                                                            "value": "1.1.1.1",
+                                                                            "type": "primitive"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "title": "DA",
+                                                                "timeRange": "createDate"
+                                                            }
                                                         }
                                                     ],
                                                     "style": "col-lg-12"

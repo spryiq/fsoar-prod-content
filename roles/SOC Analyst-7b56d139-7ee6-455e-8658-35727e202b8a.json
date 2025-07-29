@@ -23,47 +23,17 @@
             "canUpdate": false,
             "canDelete": false,
             "fieldPermissions": [],
-            "module": "keys"
-        },
-        {
-            "@type": "ModulePermission",
-            "canCreate": false,
-            "canExecute": false,
-            "canRead": false,
-            "canUpdate": false,
-            "canDelete": false,
-            "fieldPermissions": [],
-            "module": "leave_schedules"
-        },
-        {
-            "@type": "ModulePermission",
-            "canCreate": false,
-            "canExecute": false,
-            "canRead": false,
-            "canUpdate": false,
-            "canDelete": false,
-            "fieldPermissions": [],
             "module": "mitre_mitigations"
         },
         {
             "@type": "ModulePermission",
-            "canCreate": false,
+            "canCreate": true,
             "canExecute": false,
-            "canRead": false,
+            "canRead": true,
             "canUpdate": false,
             "canDelete": false,
             "fieldPermissions": [],
-            "module": "preprocessing_rules"
-        },
-        {
-            "@type": "ModulePermission",
-            "canCreate": false,
-            "canExecute": false,
-            "canRead": false,
-            "canUpdate": false,
-            "canDelete": false,
-            "fieldPermissions": [],
-            "module": "sla_template"
+            "module": "rule_databases"
         },
         {
             "@type": "ModulePermission",
@@ -133,7 +103,57 @@
             "canUpdate": false,
             "canDelete": false,
             "fieldPermissions": [],
+            "module": "threat_intel_reports"
+        },
+        {
+            "@type": "ModulePermission",
+            "canCreate": true,
+            "canExecute": false,
+            "canRead": true,
+            "canUpdate": true,
+            "canDelete": true,
+            "fieldPermissions": [],
+            "module": "tenants"
+        },
+        {
+            "@type": "ModulePermission",
+            "canCreate": false,
+            "canExecute": false,
+            "canRead": true,
+            "canUpdate": false,
+            "canDelete": false,
+            "fieldPermissions": [],
+            "module": "sla_template"
+        },
+        {
+            "@type": "ModulePermission",
+            "canCreate": false,
+            "canExecute": false,
+            "canRead": false,
+            "canUpdate": false,
+            "canDelete": false,
+            "fieldPermissions": [],
             "module": "agents"
+        },
+        {
+            "@type": "ModulePermission",
+            "canCreate": false,
+            "canExecute": false,
+            "canRead": false,
+            "canUpdate": false,
+            "canDelete": false,
+            "fieldPermissions": [],
+            "module": "appliances"
+        },
+        {
+            "@type": "ModulePermission",
+            "canCreate": false,
+            "canExecute": false,
+            "canRead": true,
+            "canUpdate": false,
+            "canDelete": false,
+            "fieldPermissions": [],
+            "module": "application"
         },
         {
             "@type": "ModulePermission",
@@ -153,7 +173,27 @@
             "canUpdate": false,
             "canDelete": false,
             "fieldPermissions": [],
+            "module": "data_archival"
+        },
+        {
+            "@type": "ModulePermission",
+            "canCreate": false,
+            "canExecute": false,
+            "canRead": false,
+            "canUpdate": false,
+            "canDelete": false,
+            "fieldPermissions": [],
             "module": "routers"
+        },
+        {
+            "@type": "ModulePermission",
+            "canCreate": false,
+            "canExecute": false,
+            "canRead": false,
+            "canUpdate": false,
+            "canDelete": false,
+            "fieldPermissions": [],
+            "module": "security"
         },
         {
             "@type": "ModulePermission",
@@ -167,749 +207,12 @@
         },
         {
             "@type": "ModulePermission",
-            "canCreate": false,
-            "canExecute": false,
-            "canRead": false,
-            "canUpdate": false,
-            "canDelete": false,
-            "fieldPermissions": [],
-            "module": "tenants"
-        },
-        {
-            "@type": "ModulePermission",
             "canCreate": true,
             "canExecute": false,
             "canRead": true,
             "canUpdate": true,
             "canDelete": false,
-            "fieldPermissions": [
-                {
-                    "@type": "FieldPermission",
-                    "field": "ackDate",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "ackSLApausedon",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "ackSlaStatus",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "alertDetectionDate",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "alertRemainingAckSLA",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "alertRemainingRespSLA",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "alerts",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "assets",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "assignedTo",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "assigneddate",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "attachmentNames",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "attachments",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "bucketName",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "bytesTransferred",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "campaigns",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "closureNotes",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "closureReason",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "commandLine",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "comments",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "communications",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "companies",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "computerName",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "conflict",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "createDate",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "createUser",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "decodedCommandLine",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "description",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "destinationID",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "destinationIp",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "destinationPort",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "deviceOwner",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "deviceSerialNo",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "deviceType",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "deviceUID",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "domain",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "dueBy",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "emailBody",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "emailClassification",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "emailFrom",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "emailHeaders",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "emailSubject",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "emailTo",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "epochTime",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "escalatedtoincident",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "escalationReason",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "eventTime",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "events",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "fileEmail",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "fileHash",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "fileHashes",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "fileName",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "fileNames",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "filePath",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "fsrQueue",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "iPAddresses",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "incidents",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "indicators",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "killChainPhase",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "latestLogin",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "metrics",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "mitreTechnique",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "mitre_sub_techniques",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "mitre_techniques",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "mitreattackid",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "mitregroups",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "mitremitigations",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "mitresoftware",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "mitretactics",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "modifyDate",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "modifyUser",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "name",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "parentProcessCmdLine",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "parentProcessName",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "parentProcessPid",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "persons",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "priorityWeight",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "processGuid",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "processId",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "processName",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "processTree",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "recipientEmailAddress",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "recordTags",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "registryKey",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "registryKeyValue",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "reporter",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "reporterEmailBody",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "resolvedAutomatedly",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "resolveddate",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "respDate",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "respDueDate",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "respSLApausedon",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "respSlaStatus",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "returnPath",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "rule",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "scheduledTask",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "senderDomain",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "senderEmailAddress",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "services",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "severity",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "source",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "sourceId",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "sourceIp",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "sourcePort",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "sourceProcess",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "sourceTool",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "sourceType",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "sourcedata",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "state",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "status",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "targetAsset",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "targetProcess",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "tasks",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "tenant",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "tenantRecordId",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "ticketID",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "type",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "url",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "userDetails",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "userName",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "vulnerabilitySeverity",
-                    "canRead": true,
-                    "canWrite": true
-                },
-                {
-                    "@type": "FieldPermission",
-                    "field": "warrooms",
-                    "canRead": true,
-                    "canWrite": true
-                }
-            ],
+            "fieldPermissions": [],
             "module": "alerts"
         },
         {
@@ -1085,6 +388,16 @@
         {
             "@type": "ModulePermission",
             "canCreate": false,
+            "canExecute": false,
+            "canRead": true,
+            "canUpdate": false,
+            "canDelete": false,
+            "fieldPermissions": [],
+            "module": "people"
+        },
+        {
+            "@type": "ModulePermission",
+            "canCreate": false,
             "canExecute": true,
             "canRead": false,
             "canUpdate": false,
@@ -1180,7 +493,7 @@
             "canUpdate": false,
             "canDelete": false,
             "fieldPermissions": [],
-            "module": "data_archival"
+            "module": "keys"
         },
         {
             "@type": "ModulePermission",
@@ -1190,7 +503,7 @@
             "canUpdate": false,
             "canDelete": false,
             "fieldPermissions": [],
-            "module": "appliances"
+            "module": "leave_schedules"
         },
         {
             "@type": "ModulePermission",
@@ -1200,67 +513,17 @@
             "canUpdate": false,
             "canDelete": false,
             "fieldPermissions": [],
-            "module": "application"
-        },
-        {
-            "@type": "ModulePermission",
-            "canCreate": false,
-            "canExecute": false,
-            "canRead": false,
-            "canUpdate": false,
-            "canDelete": false,
-            "fieldPermissions": [],
-            "module": "people"
-        },
-        {
-            "@type": "ModulePermission",
-            "canCreate": false,
-            "canExecute": true,
-            "canRead": false,
-            "canUpdate": false,
-            "canDelete": false,
-            "fieldPermissions": [],
-            "module": "security"
-        },
-        {
-            "@type": "ModulePermission",
-            "canCreate": false,
-            "canExecute": false,
-            "canRead": false,
-            "canUpdate": false,
-            "canDelete": false,
-            "fieldPermissions": [],
-            "module": "threat_intel_reports"
-        },
-        {
-            "@type": "ModulePermission",
-            "canCreate": false,
-            "canExecute": false,
-            "canRead": false,
-            "canUpdate": false,
-            "canDelete": false,
-            "fieldPermissions": [],
-            "module": "workspaces"
+            "module": "preprocessing_rules"
         },
         {
             "@type": "ModulePermission",
             "canCreate": true,
-            "canExecute": true,
+            "canExecute": false,
             "canRead": true,
             "canUpdate": true,
             "canDelete": true,
             "fieldPermissions": [],
-            "module": "ooredoo_asset"
-        },
-        {
-            "@type": "ModulePermission",
-            "canCreate": true,
-            "canExecute": true,
-            "canRead": true,
-            "canUpdate": true,
-            "canDelete": true,
-            "fieldPermissions": [],
-            "module": "ooredoo_roster"
+            "module": "qradar_datas"
         }
     ],
     "uuid": "7b56d139-7ee6-455e-8658-35727e202b8a"

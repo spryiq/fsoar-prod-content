@@ -1,9 +1,28 @@
 {
-    "descriptions": {
-        "plural": "Assets",
-        "singular": "Asset"
-    },
+    "@context": "\/api\/3\/contexts\/StagingModelMetadata",
+    "@type": "StagingModelMetadata",
     "type": "assets",
+    "parentType": null,
+    "tableName": "assets",
+    "ownable": false,
+    "userOwnable": false,
+    "queueable": false,
+    "trackable": true,
+    "taggable": true,
+    "peerReplicable": false,
+    "defaultSort": [],
+    "uniqueConstraint": [
+        {
+            "assets_unique": {
+                "columns": [
+                    "name",
+                    "hostname"
+                ]
+            }
+        }
+    ],
+    "indexable": true,
+    "writable": true,
     "attributes": [
         {
             "@type": "AttributeMetadata",
@@ -2541,6 +2560,22 @@
             }
         }
     ],
-    "tableName": "assets",
-    "displayName": "{{ ip }} {{ hostname }}"
+    "system": false,
+    "module": "assets",
+    "softDeleteable": false,
+    "archivable": false,
+    "paused": false,
+    "partitionBy": "modifyDate",
+    "archivalCriteria": {
+        "keep_primary_data_for": 24,
+        "delete_primary_data_after": 60
+    },
+    "archivalFilters": [],
+    "replicationFilters": [],
+    "enableReplication": true,
+    "displayName": "{{ ip }} {{ hostname }}",
+    "descriptions": {
+        "plural": "Assets",
+        "singular": "Asset"
+    }
 }
